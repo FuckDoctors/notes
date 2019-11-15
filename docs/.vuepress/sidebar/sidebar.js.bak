@@ -1,0 +1,10 @@
+import sideBarUtil from 'sideBarUtil';
+import {default as zhMap, en as enMap} from 'sidebarMap';
+
+const zh = sideBarUtil.inferSideBars(zhMap);
+const en = sideBarUtil.inferSideBars(enMap);
+
+export default {
+  zh,
+  en
+};
