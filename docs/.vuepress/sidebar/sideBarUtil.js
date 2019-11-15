@@ -1,3 +1,7 @@
+/**
+ * 代码来着：https://github.com/PanJiaChen/awesome-bookmarks/blob/master/docs/.vuepress/utils.js
+ */
+
 const path = require('path');
 const fs = require('fs');
 

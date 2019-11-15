@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /hero.png
-actionText: 起步 →
+actionText: 走起 →
 actionLink: /notes/
 footer: Copyright © 2019.9-present zhaobc
 ---
@@ -13,10 +13,10 @@ footer: Copyright © 2019.9-present zhaobc
 <div class="features">
   <div class="feature">
     <h2>学习笔记</h2>
-    <p>Learning by doing</p>
+    <p>纸上得来终觉浅，绝知此事要躬行。</p>
   </div>
   <div class="feature">
-    <h2>专栏</h2>
+    <h2>博客</h2>
     <p>技术分享，经验分享</p>
   </div>
   <div class="feature">
