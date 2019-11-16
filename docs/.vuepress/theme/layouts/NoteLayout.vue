@@ -8,7 +8,8 @@
 </template>
 
 <script>
-import ParentLayout from '@parent-theme/layouts/Layout.vue';
+// import ParentLayout from '@parent-theme/layouts/Layout.vue';
+import ParentLayout from '@theme/layouts/Layout.vue';
 import Breadcrumb from '@theme/components/Breadcrumb.vue';
 
 export default {
