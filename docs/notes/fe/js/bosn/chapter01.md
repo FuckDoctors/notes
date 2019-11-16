@@ -1,4 +1,5 @@
 ---
+layout: NoteLayout
 sidebar: auto
 prev: ./
 next: ./chapter02
@@ -12,9 +13,11 @@ meta:
 # 第1章 数据类型
 
 ## 1-1 JavaScript深入浅出课程介绍
+
 略
 
 ## 1-2 JavaScript六种数据类型
+
 原始类型（基本类型）：
 
 - number
@@ -32,6 +35,7 @@ object包含以下类型：
 - ...
 
 ## 1-3 JavaScript 隐式转换
+
 关于`+`和`-`：
 `+`隐式转为字符串，`-`隐式转换为数字。
 

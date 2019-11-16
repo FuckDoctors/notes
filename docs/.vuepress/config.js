@@ -64,7 +64,7 @@ module.exports = {
   ],
 
   // theme: '@theme',
-  //theme: require.resolve('./theme'),
+  // theme: require.resolve('./theme'),
   themeConfig: {
     // lastUpdated: '上次更新', // string | boolean
     locales: {
