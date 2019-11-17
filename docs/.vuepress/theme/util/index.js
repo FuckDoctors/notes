@@ -10,19 +10,21 @@ import { resolveMatchingConfig, resolveItem } from '@parent-theme/util';
  * @returns { SidebarGroup }
  */
 export function resolveSidebarItems (page, regularPath, site, localePath) {
-  const { pages, themeConfig } = site
+  const { pages, themeConfig } = site;
 
   const localeConfig = localePath && themeConfig.locales
     ? themeConfig.locales[localePath] || themeConfig
-    : themeConfig
+    : themeConfig;
 
-  const sidebarConfig = localeConfig.sidebar || themeConfig.sidebar
+  const sidebarConfig = localeConfig.sidebar || themeConfig.sidebar;
   if (!sidebarConfig) {
-    return []
+    return [];
   } else {
-    const { base, config } = resolveMatchingConfig(regularPath, sidebarConfig)
-    return config
-    ? config.map(item => resolveItem(item, pages, base))
-    : [];
+    // 获取sidebarConfig
+    const { base, config } = resolveMatchingConfig(regularPath, sidebarConfig);
+    // return config
+    // ? config.map(item => resolveItem(item, pages, base))
+    // : [];
+    return config || [];
   }
 }

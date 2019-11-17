@@ -1,5 +1,5 @@
 ---
-#sidebar: auto
+sidebar: auto
 prev: ../
 next: false
 meta:
@@ -10,6 +10,9 @@ meta:
 ---
 
 # Javascript学习笔记
+
+<!-- <Breadcrumb /> -->
+
 记录基础的Javascript知识，也会包含ES5及以前的内容。
 
 目录：
