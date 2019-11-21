@@ -1,4 +1,5 @@
 ---
+layout: NoteLayout
 sidebar: auto
 meta:
   - name: description

@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import { resolveSidebarItems } from '@theme/util';
-// import { resolveSidebarItems } from '@parent-theme/util';
+// import { resolveSidebarItems } from '@theme/util';
+import { resolveSidebarItems } from '@parent-theme/util';
 
 export default {
     name: 'Breadcrumb',

@@ -1,4 +1,5 @@
 ---
+layout: NoteLayout
 sidebar: auto
 prev: ../
 next: ./chapter01
