@@ -135,3 +135,30 @@ console.log(bosn instanceof Person);
 :::
 
 打开开发者工具看结果，或者打开JSFiddle在线调试。
+
+::: tip
+Caution!
+不同window或iframe间的对象类型检查不能使用instanceof!
+:::
+
+### Object.prototype.toString
+
+|                                          命令 | 结果                 |
+| --------------------------------------------: | :------------------- |
+|           Object.prototype.toString.apply([]) | "[object Array]"     |
+| Object.prototype.toString.apply(function(){}) | "[object Function]"  |
+|         Object.prototype.toString.apply(null) | "[object Null]"      |
+|    Object.prototype.toString.apply(undefined) | "[object Undefined]" |
+
+::: tip
+IE6/7/8 Object.prototype.toString.apply(null)返回"[object Object]"
+:::
+
+### 类型检查小结
+
+- typeof
+  适合基本类型及function检测，遇到null失效。
+- Object.prototype.toString
+  通过Object.prototype.toString拿到，适合内置对象和基本类型，遇到null和undefined失效（IE6/7/8等返回[object Object]）。
+- instanceof
+  适合自定义对象，也可以用来检测原生对象，在不同iframe和window间检测时失效。
