@@ -9,6 +9,9 @@
 </template>
 
 <script>
+// import { resolveSidebarItems } from '@theme/util';
+import { resolveSidebarItems } from '@parent-theme/util';
+
 export default {
     name: 'Breadcrumb',
     props: {
@@ -26,9 +29,15 @@ export default {
             for (let index = levels; index > 1; index--) {
                 links.push(paths.slice(0, index).join('/') + '/');
             }
+            // links = links.reverse();
 
             var breadcrumbs = [];
-
+            // for (const link of links) {
+            //     breadcrumbs.push({
+            //         title: this.getSidebarItems(link)[0].title,
+            //         link: link
+            //     });
+            // }
             links.reverse().forEach(link => {
                 breadcrumbs.push({
                     // title: this.getSidebarItems(link)[0].title,
@@ -38,15 +47,13 @@ export default {
             });
 
             // 当前page
-            if (!/.+\.html$/.test(this.$page.regularPath)) {
-                // 不已html开头的话，把最后一个breadcrumb去掉，因为上面多加了一层链接
-                breadcrumbs.pop();
+            if (/.+\.html$/.test(this.$page.regularPath)) {
+                breadcrumbs.push({
+                    title: this.$page.title
+                });
             }
-            breadcrumbs.push({
-                title: this.$page.title
-            });
 
-            // console.log(breadcrumbs);
+            console.log(breadcrumbs);
             return breadcrumbs;
         }
     },
@@ -55,6 +62,14 @@ export default {
             const { pages } = this.$site;
             const page = pages.filter(p => p.regularPath === regularPath)[0];
             return page.title;
+        },
+        getSidebarItems(regularPath) {
+            regularPath = regularPath || this.$page.regularPath;
+            return resolveSidebarItems(
+                this.$page,
+                regularPath,
+                this.$site,
+                this.$localePath)
         }
     }
 }
