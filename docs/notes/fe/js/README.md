@@ -2,7 +2,8 @@
 layout: NoteLayout
 sidebar: auto
 prev: ../
-next: false
+# next: bosn/ 不行，必须加./
+next: ./bosn/
 meta:
   - name: description
     content: Javascript学习笔记

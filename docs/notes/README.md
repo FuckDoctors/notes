@@ -1,3 +1,13 @@
+---
+layout: NoteLayout
+sidebar: auto
+meta:
+  - name: description
+    content: 学习笔记
+  - name: keywords
+    content: 学习笔记 前端 后端 js es6 ts html css3 javascript typescript vue java .net spring springboot
+---
+
 # 笔记内容
 还是那句话：
 > 纸上得来终觉浅，绝知此事要躬行。
