@@ -60,7 +60,10 @@ module.exports = {
         updatePopup: true
       }
     ],
-    '@vuepress/back-to-top'
+    '@vuepress/back-to-top',
+    'demo-code',
+    'vuepress-plugin-medium-zoom',
+    'vuepress-plugin-smooth-scroll'
   ],
 
   // theme: '@theme',

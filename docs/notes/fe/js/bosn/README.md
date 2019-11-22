@@ -5,9 +5,11 @@ prev: ../
 next: ./chapter01
 meta:
   - name: description
-    content: JavaScript深入浅出 数据类型
+    content: JavaScript深入浅出
   - name: keywords
-    content: JavaScript深入浅出 Bosn
+    content: JavaScript深入浅出 Bosn JavaScript js
+tags:
+  - js
 ---
 
 # JavaScript深入浅出

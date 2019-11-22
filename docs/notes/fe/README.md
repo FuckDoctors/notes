@@ -2,7 +2,7 @@
 layout: NoteLayout
 sidebar: auto
 prev: ../
-next: js/
+next: ./js/
 meta:
   - name: description
     content: 前端笔记
@@ -11,3 +11,9 @@ meta:
 ---
 
 # Front End
+
+- [Javascript](./js/)
+- [ES6](./es6/)
+- [TypeScript](./ts/)
+- [Vue](./vue/)
+- [CSS3](./css3/)

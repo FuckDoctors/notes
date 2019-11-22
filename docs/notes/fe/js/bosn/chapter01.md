@@ -8,6 +8,8 @@ meta:
     content: JavaScript深入浅出 数据类型
   - name: keywords
     content: JavaScript深入浅出 数据类型 隐式转换 typeof instanceOf prototype
+tags:
+  - js
 ---
 
 # 第1章 数据类型
