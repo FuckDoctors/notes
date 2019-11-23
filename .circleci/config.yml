@@ -1,0 +1,109 @@
+# https://github.com/vuejs/vuepress/blob/master/.circleci/config.yml
+# https://www.cnblogs.com/liugx/p/10339010.html
+
+# https://circleci.com/docs/2.0/faq/#how-can-i-set-the-timezone-in-docker-images
+
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+
+defaults: &defaults
+  working_directory: ~/project
+  docker:
+    - image: circleci/node:latest
+      environment:
+          TZ: "Asia/Shanghai"
+
+jobs:
+
+  #------------------------------------------------------------
+  # Install
+  #------------------------------------------------------------
+
+  install:
+    <<: *defaults
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run:
+          name: "Install Dependencies"
+          command: yarn install
+
+      - save_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
+          paths:
+            - ~/.cache/yarn
+          
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - ./*
+
+  #------------------------------------------------------------
+  # Build
+  #------------------------------------------------------------
+  build:
+    <<: *defaults
+    steps:
+      # - checkout
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: 'Run build'
+          command: yarn docs:build
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - docs/.vuepress/dist
+            - deploy.sh
+
+  #------------------------------------------------------------
+  # Deploy
+  #------------------------------------------------------------
+  deploy:
+    <<: *defaults
+    steps:
+      # 使用checkout里的user key不行，必须使用ssh private key
+      # 使用ssh private key虽然能解决安装ssh key的事，但是还是会报「Are you sure you want to continue connecting (yes/no)? 」
+      - add_ssh_keys:
+          fingerprints:
+            - "84:4e:8e:e9:82:9f:a2:5c:1d:29:6f:29:8e:4b:09:95"
+      # - checkout
+      - attach_workspace:
+          at: ~/project
+      - run: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+      - run:
+          name: 'Run Deploy'
+          command: |
+            sudo chmod +x ./deploy.sh
+            ./deploy.sh
+      
+
+#------------------------------------------------------------
+# Workflows
+#------------------------------------------------------------
+
+workflows:
+  version: 2
+  install-build-deploy:
+    jobs:
+      - install
+      - build:
+          requires:
+            - install
+          filters:
+            branches:
+              only: master
+      - deploy:
+          requires:
+            - build
+
