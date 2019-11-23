@@ -2,7 +2,7 @@
 layout: NoteLayout
 sidebar: auto
 prev: ./chapter01
-next: ./chapter03
+next: false
 meta:
   - name: description
     content: JavaScript深入浅出 表达式和运算符
