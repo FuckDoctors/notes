@@ -11,9 +11,18 @@ git config --global user.name "FuckDoctors"
 
 cd docs/.vuepress/dist
 
+# https://discuss.circleci.com/t/cant-ignore-the-gh-pages-branch/2002/2
+# https://circleci.com/docs/2.0/skip-build/
+cat>circle.yml<<EOF
+general:
+  branches:
+    ignore:
+      - gh-pages
+EOF
+
 git init
 git add -A
-git commit -m "Deploying docs at $(date "+%Y-%m-%d %H:%M:%S")"
+git commit -m "Deploying docs [ci skip] at $(date "+%Y-%m-%d %H:%M:%S")"
 
 git push -f git@github.com:FuckDoctors/notes.git master:gh-pages
 

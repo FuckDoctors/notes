@@ -96,7 +96,10 @@ workflows:
   version: 2
   install-build-deploy:
     jobs:
-      - install
+      - install:
+          filters:
+            branches:
+              only: master
       - build:
           requires:
             - install
