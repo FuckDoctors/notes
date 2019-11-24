@@ -23,12 +23,12 @@ meta:
 
 目录如下：
 
-- Javascript
-  - [Javascript基础教程](fe/js/)
+- JavaScript
+  - [JavaScript基础教程](fe/js/)
   - [ES6入门](fe/es6)
 - CSS3
   - 待定
-- [Typescript](fe/ts/)
+- [TypeScript](fe/ts/)
   - Typescript官方资料
 - [Vue](fe/vue/)
   - Vue官方资料
