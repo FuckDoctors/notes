@@ -72,6 +72,10 @@ module.exports = {
   // theme: '@theme',
   // theme: require.resolve('./theme'),
   themeConfig: {
+    repo: 'FuckDoctors/notes',
+    docsBranch: 'master',
+    docsDir: 'docs',
+    editLinks: true,
     // lastUpdated: '上次更新', // string | boolean
     locales: {
       '/': {
