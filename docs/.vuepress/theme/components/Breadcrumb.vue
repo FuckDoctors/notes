@@ -2,7 +2,7 @@
     <!-- 单个breadcrumb感觉挺怪，所以2个以上时再出 -->
     <div class="breadcrumb-container" v-if="breadcrumbLinks && breadcrumbLinks.length > 1">
         <span class="breadcrumb-item" v-for="(breadcrumb, index) in breadcrumbLinks">
-            <a v-if="breadcrumb.link && breadcrumb.link.length > 0" :href="breadcrumb.link" target="_self">{{breadcrumb.title}}</a>
+            <a v-if="breadcrumb.link && breadcrumb.link.length > 0" :href="$withBase(breadcrumb.link)" target="_self">{{breadcrumb.title}}</a>
             <span v-else>{{ breadcrumb.title }}</span>
             <span class="separator" v-if="index != breadcrumbLinks.length - 1">/</span>
         </span>
