@@ -15,7 +15,7 @@ git init
 git add -A
 git commit -m "Deploying docs at $(date "+%Y-%m-%d %H:%M:%S")"
 
-git push -f git@github.com:FuckDoctors/learning-notes.git master:gh-pages
+git push -f git@github.com:FuckDoctors/notes.git master:gh-pages
 
 cd -
 rm -rf docs/.vuepress/dist
