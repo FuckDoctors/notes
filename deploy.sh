@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+# https://vuepress.vuejs.org/zh/guide/deploy.html#github-pages
+
 set -e
 
 # yarn docs:build
