@@ -1,10 +1,10 @@
 <template>
-    <ParentLayout>
-        <!-- <template #page-top>
+  <ParentLayout>
+    <!-- <template #page-top>
             <Breadcrumb />
         </template> -->
-        <Breadcrumb slot="page-top" />
-    </ParentLayout>
+    <Breadcrumb slot="page-top" />
+  </ParentLayout>
 </template>
 
 <script>
@@ -13,10 +13,10 @@ import ParentLayout from '@theme/layouts/Layout.vue';
 import Breadcrumb from '@theme/components/Breadcrumb.vue';
 
 export default {
-    name: 'NoteLayout',
-    components: {
-        ParentLayout,
-        Breadcrumb
-    }
-}
+  name: 'NoteLayout',
+  components: {
+    ParentLayout,
+    Breadcrumb
+  }
+};
 </script>

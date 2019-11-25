@@ -12,6 +12,5 @@ console.log(zh);
 
 console.log(JSON.stringify(zh));
 
-
 const en = sideBarUtil.inferSideBars(sidebar.en);
 console.log(JSON.stringify(en));

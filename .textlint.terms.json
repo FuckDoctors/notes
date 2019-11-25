@@ -2,7 +2,7 @@
   "Stylus",
   "VuePress",
   [
-      "front[- ]matter",
-      "frontmatter"
+    "front[- ]matter",
+    "frontmatter"
   ]
 ]
