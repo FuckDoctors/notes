@@ -1,3 +1,5 @@
 {
-  "docs/**/*.md": ["yarn lint-md", "git add"]
+  "docs/**/*.md": ["yarn lint-md", "git add"],
+  "*.{js,json,css,vue}": ["yarn format", "git add"],
+  "*.{css,scss}": ["yarn lint-css", "git add"],
 }
