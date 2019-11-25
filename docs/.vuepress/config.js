@@ -62,9 +62,12 @@ module.exports = {
       }
     ],
     '@vuepress/back-to-top',
-    ['demo-code', {
-      demoCodeMark: 'demo'
-    }],
+    [
+      'demo-code',
+      {
+        demoCodeMark: 'demo'
+      }
+    ],
     'vuepress-plugin-medium-zoom',
     'vuepress-plugin-smooth-scroll'
   ],
@@ -101,6 +104,7 @@ module.exports = {
 
   markdown: {
     lineNumbers: true
-  }
+  },
 
+  postcss: require('../../postcss.config')
 };
