@@ -1,6 +1,6 @@
 {
   "docs/**/*.md": ["yarn lint-md", "git add"],
   "*.{js,ts,json,css,vue,md}": ["yarn format", "git add"],
-  "*.{css,scss}": ["yarn lint-css", "git add"],
+  "*.{css,scss,styl}": ["yarn lint-css", "git add"],
   "*.{js,jsx,ts,vue}": ["yarn eslint", "git add"]
 }

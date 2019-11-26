@@ -2,3 +2,4 @@
 !.vuepress
 # vuepress的slot bug，暂时copy过来修改的，为了方便差分，保持原来的格式。
 docs/.vuepress/theme/layouts/Layout.vue
+dist/
