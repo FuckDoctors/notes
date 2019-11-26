@@ -9,7 +9,9 @@ meta:
 ---
 
 # 笔记内容
+
 还是那句话：
+
 > 纸上得来终觉浅，绝知此事要躬行。
 
 有些事情看过，感觉自己知道，但是要用的时候又不记得了，所以，学习不能只看，还要动手，加深印象。
@@ -19,22 +21,24 @@ meta:
 注：内容可能随时更新。
 
 ## [前端](fe/)
-主要是基础的Javascript, CSS3，Typescript以及前端框架，比如Vue。
+
+主要是基础的 Javascript, CSS3，Typescript 以及前端框架，比如 Vue。
 
 目录如下：
 
 - JavaScript
-  - [JavaScript基础教程](fe/js/)
-  - [ES6入门](fe/es6)
+  - [JavaScript 基础教程](fe/js/)
+  - [ES6 入门](fe/es6)
 - CSS3
   - 待定
 - [TypeScript](fe/ts/)
-  - Typescript官方资料
+  - Typescript 官方资料
 - [Vue](fe/vue/)
-  - Vue官方资料
+  - Vue 官方资料
 
 ## [后端](be/)
-主要是Java，.Net以及后台框架，比如Spring，SpringBoot等。
+
+主要是 Java，.Net 以及后台框架，比如 Spring，SpringBoot 等。
 
 目录结构如下：
 

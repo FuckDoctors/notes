@@ -11,14 +11,14 @@ meta:
     content: Javascript 学习笔记
 ---
 
-# Javascript学习笔记
+# Javascript 学习笔记
 
 <!-- <Breadcrumb /> -->
 
-记录基础的Javascript知识，也会包含ES5及以前的内容。
+记录基础的 Javascript 知识，也会包含 ES5 及以前的内容。
 
 目录：
 
-- [慕课网上Bosn老师的《JavaScript深入浅出》](bosn/)
+- [慕课网上 Bosn 老师的《JavaScript 深入浅出》](bosn/)
 - [网道《JavaScript 教程》](wangdoc/)
 - 未完待续

@@ -42,9 +42,9 @@ object 包含以下类型：
 关于`+`和`-`：
 `+`隐式转为字符串，`-`隐式转换为数字。
 
-``` js
-"37" - 7 // 30
-"37" + 7 // 377
+```js
+'37' - 7; // 30
+'37' + 7; // 377
 ```
 
 因此可以巧用`+`和`-`转换数据类型，比如使用`- 0`（减 0），转换为数字，使用`+ ''`（加空字符串）转换为字符串。
@@ -65,9 +65,9 @@ object 包含以下类型：
 ::: warning
 图片名中不能出现`#`，否则会会有问题：
 
-1. markdown插入图片的方式，不能显示图片
-2. html插入图片的方式会报错。
-:::
+1. markdown 插入图片的方式，不能显示图片
+2. html 插入图片的方式会报错。
+   :::
 
 ## 1-5 JavaScript 类型检查
 
@@ -84,6 +84,7 @@ Javascript 中检查类型的方法有很多，比如：
 `typeof`返回一个字符串，它非常适合函数对象和基本类型的判断。
 
 比如：
+
 |                 命令 | 结果        |
 | -------------------: | :---------- |
 |           typeof 100 | "number"    |
@@ -119,6 +120,7 @@ Javascript 中检查类型的方法有很多，比如：
 例子：
 
 ::: demo html
+
 <script>
 function Person() {}
 function Student() {}
@@ -132,13 +134,14 @@ console.log(one instanceof Person);
 console.log(one instanceof Student);
 console.log(bosn instanceof Person);
 </script>
+
 :::
 
-打开开发者工具看结果，或者打开JSFiddle在线调试。
+打开开发者工具看结果，或者打开 JSFiddle 在线调试。
 
 ::: tip
 Caution!
-不同window或iframe间的对象类型检查不能使用instanceof!
+不同 window 或 iframe 间的对象类型检查不能使用 instanceof!
 :::
 
 ### Object.prototype.toString
@@ -157,8 +160,8 @@ IE6/7/8 Object.prototype.toString.apply(null)返回"[object Object]"
 ### 类型检查小结
 
 - typeof
-  适合基本类型及function检测，遇到null失效。
+  适合基本类型及 function 检测，遇到 null 失效。
 - Object.prototype.toString
-  通过Object.prototype.toString拿到，适合内置对象和基本类型，遇到null和undefined失效（IE6/7/8等返回[object Object]）。
+  通过 Object.prototype.toString 拿到，适合内置对象和基本类型，遇到 null 和 undefined 失效（IE6/7/8 等返回[object Object]）。
 - instanceof
-  适合自定义对象，也可以用来检测原生对象，在不同iframe和window间检测时失效。
+  适合自定义对象，也可以用来检测原生对象，在不同 iframe 和 window 间检测时失效。

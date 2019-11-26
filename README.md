@@ -8,14 +8,14 @@
 - Nodejs
   - Yarn
 
-## 使用的VSC插件
+## 使用的 VSC 插件
 
-- Vue插件
+- Vue 插件
   - Vetur
 - 代码格式化插件
   - Prettier - Code Formatter
   - Markdown All in One
-- Markdown工具
+- Markdown 工具
   - markdown lint
   - Markdown All in One
   - Markdown Preview Enhanced

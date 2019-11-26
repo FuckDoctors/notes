@@ -20,4 +20,4 @@ module.exports = {
   filters: {
     comments: true
   }
-}
+};
