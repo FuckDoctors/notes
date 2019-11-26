@@ -21,7 +21,7 @@ const en = [
   {
     title: 'Front-End',
     dirname: 'en/notes/fe'
-  },
+  }
   // {
   //   title: 'JS Notes',
   //   dirname: 'en/notes/fe/js'

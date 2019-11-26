@@ -7,8 +7,10 @@
     "lint-md:style": "remark --quiet .",
     "lint-md": "yarn lint-md:style && yarn lint-md:wording",
     "lint-css": "stylelint **/*.css **/*.scss",
+    "format:check": "prettier --single-quote --check **/*.{js,ts,json,md,vue}",
     "format": "prettier --single-quote --write **/*.{js,ts,json,md,vue}",
-    "format:check": "prettier --single-quote --check **/*.{js,ts,json,md,vue}"
+    "eslint:check": "eslint --quiet .",
+    "eslint": "eslint --quiet --fix ."
   },
   "husky": {
     "hooks": {
@@ -16,6 +18,8 @@
     }
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
     "@vuepress/plugin-active-header-links": "^1.0.0-rc.1",
     "@vuepress/plugin-back-to-top": "^1.0.3",
     "@vuepress/plugin-blog": "^1.2.4",
@@ -24,6 +28,10 @@
     "@vuepress/plugin-register-components": "^1.0.0-rc.1",
     "@vuepress/theme-blog": "^1.2.3",
     "autoprefixer": "^9.7.2",
+    "eslint": "^6.7.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-vue": "^6.0.1",
     "husky": "^3.1.0",
     "lint-staged": "^9.4.3",
     "postcss": "^7.0.23",
@@ -53,6 +61,7 @@
     "textlint-rule-stop-words": "^1.0.17",
     "textlint-rule-terminology": "^2.0.1",
     "textlint-rule-write-good": "^1.6.2",
+    "typescript": "^3.7.2",
     "vuepress-plugin-demo-code": "^0.4.0",
     "vuepress-plugin-medium-zoom": "^1.1.7",
     "vuepress-plugin-smooth-scroll": "^0.0.8"

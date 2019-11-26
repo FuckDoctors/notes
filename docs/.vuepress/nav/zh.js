@@ -19,7 +19,7 @@ module.exports = [
           },
           {
             text: 'Javascript',
-            link: '/tags/js/',
+            link: '/tags/js/'
           },
           {
             text: 'CSS',
@@ -70,5 +70,5 @@ module.exports = [
   {
     text: '关于我',
     link: '/about/'
-  },
-]
+  }
+];

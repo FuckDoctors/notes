@@ -9,12 +9,13 @@ import { resolveMatchingConfig, resolveItem } from '@parent-theme/util';
  * @param { string } localePath
  * @returns { SidebarGroup }
  */
-export function resolveSidebarItems (page, regularPath, site, localePath) {
+export function resolveSidebarItems(page, regularPath, site, localePath) {
   const { pages, themeConfig } = site;
 
-  const localeConfig = localePath && themeConfig.locales
-    ? themeConfig.locales[localePath] || themeConfig
-    : themeConfig;
+  const localeConfig =
+    localePath && themeConfig.locales
+      ? themeConfig.locales[localePath] || themeConfig
+      : themeConfig;
 
   const sidebarConfig = localeConfig.sidebar || themeConfig.sidebar;
   if (!sidebarConfig) {

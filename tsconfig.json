@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "allowJs": true,
+    "removeComments": true,
+    "sourceMap": true
+  },
+  "include": [
+    // file pattern
+    "**/*.ts",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.vue",
+    // vuepress
+    "docs/.vuepress/**/*.ts",
+    "docs/.vuepress/**/*.js",
+    "docs/.vuepress/**/*.jsx",
+    "docs/.vuepress/**/*.vue"
+  ],
+  "exclude": [
+    // exclude pattern
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}

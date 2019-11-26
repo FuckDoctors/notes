@@ -31,7 +31,7 @@ function inferSideBars(sideBarMap) {
   // return sidebar;
 
   // sort，倒序，子目录在上，父目录在下
-  var keys = [];
+  let keys = [];
   for (const key in sidebar) {
     if (sidebar.hasOwnProperty(key)) {
       keys.push(key);
@@ -46,12 +46,11 @@ function inferSideBars(sideBarMap) {
     }
   });
 
-  let newSideBar = {};
+  const newSideBar = {};
   for (const key of keys) {
     newSideBar[key] = sidebar[key];
   }
   return newSideBar;
-
 }
 
 // export default {
