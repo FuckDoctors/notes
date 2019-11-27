@@ -6,11 +6,15 @@ module.exports = {
     //   extensions: ['.css', '.scss', '.styl']
     // }),
     require('postcss-import')({
+      // filter: url => !/\.scss$|\.styl(us)?$/.test(url),
       plugins: [
         require('stylelint')({
           /* options */
         })
       ]
+    }),
+    require('cssnano')({
+      preset: 'default'
     }),
     require('postcss-mixins'),
     require('postcss-simple-vars'),
