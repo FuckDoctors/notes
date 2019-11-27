@@ -120,7 +120,9 @@ workflows:
       - install:
           filters:
             branches:
-              only: master
+              only:
+                - master
+                - dev
       - check:
           requires:
             - install
