@@ -62,13 +62,13 @@ module.exports = {
       }
     ],
     '@vuepress/back-to-top',
+    '@vuepress/medium-zoom',
     [
       'demo-code',
       {
         demoCodeMark: 'demo'
       }
     ],
-    'vuepress-plugin-medium-zoom',
     'vuepress-plugin-smooth-scroll'
   ],
 
