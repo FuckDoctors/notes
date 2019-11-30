@@ -10,7 +10,8 @@
     "format:check": "prettier --single-quote --check **/*.{js,ts,json,md,vue}",
     "format": "prettier --single-quote --write **/*.{js,ts,json,md,vue}",
     "eslint:check": "eslint --quiet .",
-    "eslint": "eslint --quiet --fix ."
+    "eslint": "eslint --quiet --fix .",
+    "check-all": "yarn lint-md && yarn format:check && yarn lint-css && yarn eslint:check"
   },
   "husky": {
     "hooks": {

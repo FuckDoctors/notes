@@ -8,7 +8,7 @@ meta:
     content: JavaScript深入浅出
   - name: keywords
     content: JavaScript深入浅出 Bosn JavaScript js
-tags:
+tag:
   - js
 ---
 
@@ -20,7 +20,7 @@ tags:
 
 - [第 1 章 数据类型](chapter01/)
 - [第 2 章 表达式和运算符](chapter02/)
-- 第 3 章 语句
+- [第 3 章 语句](chapter03/)
 - 第 4 章 对象
 - 第 5 章 数组
 - 第 6 章 函数和作用域（函数、this）
