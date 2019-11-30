@@ -20,10 +20,11 @@
   - Prettier - Code Formatter
   - Markdown All in One
 - Markdown 工具
-  - markdown lint
   - Markdown All in One
   - Markdown Preview Enhanced
 - lint 工具
+  - markdownlint
+  - textlint
   - ESLint
   - stylelint
 - 其他插件
