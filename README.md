@@ -1,3 +1,6 @@
+[![CircleCI](https://circleci.com/gh/FuckDoctors/notes.svg?style=svg)](https://circleci.com/gh/FuckDoctors/notes)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 # 开发环境
 
 ## 环境配置
@@ -44,3 +47,7 @@
   - 对 git staged 的文件（修改了的文件）做一些检查和修复
 - husky
   - 在 pre-commit 时执行`lint-staged`
+- Commitizen
+  - 替代 git commit
+- commitlint
+  - 校验 git commit message
