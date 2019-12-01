@@ -4,6 +4,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "lint-md:wording": "textlint 'docs/**/*.md'",
+    "lint-md:wording-fix": "textlint --fix 'docs/**/*.md'",
     "lint-md:style": "remark --quiet .",
     "lint-md": "yarn lint-md:style && yarn lint-md:wording",
     "lint-css": "stylelint '**/*.css' '**/*.scss' '**/*.styl'",
@@ -12,7 +13,8 @@
     "eslint:check": "eslint --quiet .",
     "eslint": "eslint --quiet --fix .",
     "check-all": "yarn lint-md && yarn format:check && yarn lint-css && yarn eslint:check",
-    "release": "standard-version"
+    "release": "standard-version",
+    "debug:textlint": "node --inspect-brk=9229 ./node_modules/.bin/textlint docs/notes/fe/js/bosn/chapter01.md"
   },
   "husky": {
     "hooks": {
@@ -24,6 +26,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
+    "@textlint-rule/textlint-rule-no-unmatched-pair": "^1.0.7",
     "@typescript-eslint/eslint-plugin": "^2.9.0",
     "@typescript-eslint/parser": "^2.9.0",
     "@vuepress/plugin-back-to-top": "^1.2.0",
@@ -65,6 +68,7 @@
     "textlint-rule-common-misspellings": "^1.0.1",
     "textlint-rule-diacritics": "^1.0.0",
     "textlint-rule-en-capitalization": "^2.0.2",
+    "textlint-rule-no-dead-link": "^4.6.2",
     "textlint-rule-stop-words": "^1.0.17",
     "textlint-rule-terminology": "^2.0.1",
     "textlint-rule-write-good": "^1.6.2",

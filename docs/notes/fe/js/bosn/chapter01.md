@@ -22,19 +22,19 @@ tag:
 
 原始类型（基本类型）：
 
-- number
-- string
-- boolean
-- null
-- undefined
+- `number`
+- `string`
+- `boolean`
+- `null`
+- `undefined`
 
 除此之外，JavaScript 还有一种对象类型（复合类型）`object`。
 
-object 包含以下类型：
+`object` 包含以下类型：
 
-- Function
-- Array
-- Date
+- `Function`
+- `Array`
+- `Date`
 - ...
 
 ## 1-3 隐式转换
@@ -65,21 +65,24 @@ object 包含以下类型：
 ::: warning
 图片名中不能出现`#`，否则会会有问题：
 
-1. markdown 插入图片的方式，不能显示图片
-2. html 插入图片的方式会报错。
+1. Markdown 插入图片的方式，不能显示图片
+2. HTML 插入图片的方式会报错。
    :::
 
 ## 1-5 类型检查
 
-Javascript 中检查类型的方法有很多，比如：
+JavaScript 中检查类型的方法有很多，比如：
 
-- typeof
-- instanceof
-- Object.prototype.toString
-- constructor
+- `typeof`
+- `instanceof`
+- `Object.prototype.toString`
+- `constructor`
+
+  注意：使用 textlint 时，报`TypeError: entry.split is not a function`，所以上面加了引号。
+
 - duck type
 
-### typeof
+### `typeof`
 
 `typeof`返回一个字符串，它非常适合函数对象和基本类型的判断。
 
@@ -97,7 +100,7 @@ Javascript 中检查类型的方法有很多，比如：
 |        typeof [1, 2] | "object"    |
 |           typeof NaN | "number"    |
 
-### instanceof
+### `instanceof`
 
 `instanceof`常用于对象类型的判断，它是基于`原型链`的形式去判断的操作符。
 
@@ -119,7 +122,7 @@ Javascript 中检查类型的方法有很多，比如：
 
 例子：
 
-::: demo html
+::: demo HTML
 
 <script>
 function Person() {}
@@ -144,7 +147,7 @@ Caution!
 不同 window 或 iframe 间的对象类型检查不能使用 instanceof!
 :::
 
-### Object.prototype.toString
+### `Object.prototype.toString`
 
 |                                          命令 | 结果                 |
 | --------------------------------------------: | :------------------- |
@@ -159,9 +162,9 @@ IE6/7/8 Object.prototype.toString.apply(null)返回"[object Object]"
 
 ### 类型检查小结
 
-- typeof
+- `typeof`
   适合基本类型及 function 检测，遇到 null 失效。
-- Object.prototype.toString
+- `Object.prototype.toString`
   通过 Object.prototype.toString 拿到，适合内置对象和基本类型，遇到 null 和 undefined 失效（IE6/7/8 等返回[object Object]）。
-- instanceof
+- `instanceof`
   适合自定义对象，也可以用来检测原生对象，在不同 iframe 和 window 间检测时失效。

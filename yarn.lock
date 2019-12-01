@@ -898,6 +898,15 @@
   dependencies:
     any-observable "^0.3.0"
 
+"@textlint-rule/textlint-rule-no-unmatched-pair@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.npm.taobao.org/@textlint-rule/textlint-rule-no-unmatched-pair/download/@textlint-rule/textlint-rule-no-unmatched-pair-1.0.7.tgz#c7c18d2ddac913fa4e5d98d998bb3e97d4f73cb6"
+  integrity sha1-x8GNLdrJE/pOXZjZmLs+l9T3PLY=
+  dependencies:
+    sentence-splitter "^3.0.11"
+    textlint-rule-helper "2.0.1"
+    textlint-tester "5.0.1"
+
 "@textlint/ast-node-types@^4.0.2", "@textlint/ast-node-types@^4.2.1", "@textlint/ast-node-types@^4.2.5":
   version "4.2.5"
   resolved "https://registry.npm.taobao.org/@textlint/ast-node-types/download/@textlint/ast-node-types-4.2.5.tgz#ae13981bc8711c98313a6ac1c361194d6bf2d39b"
@@ -910,7 +919,7 @@
   dependencies:
     "@textlint/ast-node-types" "^4.2.5"
 
-"@textlint/feature-flag@^3.1.5":
+"@textlint/feature-flag@^3.0.5", "@textlint/feature-flag@^3.1.5":
   version "3.1.5"
   resolved "https://registry.npm.taobao.org/@textlint/feature-flag/download/@textlint/feature-flag-3.1.5.tgz#8c5fba7a283c6d9f1b3c4013814c055568dacde2"
   integrity sha1-jF+6eig8bZ8bPEATgUwFVWjazeI=
@@ -932,7 +941,7 @@
     text-table "^0.2.0"
     try-resolve "^1.0.1"
 
-"@textlint/kernel@^3.1.10":
+"@textlint/kernel@^3.0.0", "@textlint/kernel@^3.1.10":
   version "3.1.10"
   resolved "https://registry.npm.taobao.org/@textlint/kernel/download/@textlint/kernel-3.1.10.tgz#51c2c1caf0a0a80d587b994de11a94ac2c147374"
   integrity sha1-UcLByvCgqA1Ye5lN4RqUrCwUc3Q=
@@ -5044,7 +5053,7 @@ fs-exists-sync@^0.1.0:
   resolved "https://registry.npm.taobao.org/fs-exists-sync/download/fs-exists-sync-0.1.0.tgz#982d6893af918e72d08dec9e8673ff2b5a8d6add"
   integrity sha1-mC1ok6+RjnLQjeyehnP/K1qNat0=
 
-fs-extra@8.1.0:
+fs-extra@8.1.0, fs-extra@^8.1.0:
   version "8.1.0"
   resolved "https://registry.npm.taobao.org/fs-extra/download/fs-extra-8.1.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffs-extra%2Fdownload%2Ffs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"
   integrity sha1-SdQ8RaiM2Wd2aMt74bRu/bjS4cA=
@@ -5208,6 +5217,11 @@ get-stream@^5.0.0:
   integrity sha1-ASA83JJZf5uQkGfD5lbMH008Tck=
   dependencies:
     pump "^3.0.0"
+
+get-url-origin@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/get-url-origin/download/get-url-origin-1.0.1.tgz#edebfcc085433e84c6b32a5738b0996edfd5a7b9"
+  integrity sha1-7ev8wIVDPoTGsypXOLCZbt/Vp7k=
 
 get-value@^2.0.3, get-value@^2.0.6:
   version "2.0.6"
@@ -7364,7 +7378,7 @@ medium-zoom@^1.0.4:
   resolved "https://registry.npm.taobao.org/medium-zoom/download/medium-zoom-1.0.4.tgz#b1063093f81151a19989489589edf28e6090630c"
   integrity sha1-sQYwk/gRUaGZiUiVie3yjmCQYww=
 
-mem@^4.0.0:
+mem@^4.0.0, mem@^4.3.0:
   version "4.3.0"
   resolved "https://registry.npm.taobao.org/mem/download/mem-4.3.0.tgz#461af497bc4ae09608cdb2e60eefb69bff744178"
   integrity sha1-Rhr0l7xK4JYIzbLmDu+2m/90QXg=
@@ -7820,6 +7834,11 @@ node-fetch-npm@^2.0.2:
     encoding "^0.1.11"
     json-parse-better-errors "^1.0.0"
     safe-buffer "^5.1.1"
+
+node-fetch@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.npm.taobao.org/node-fetch/download/node-fetch-2.6.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnode-fetch%2Fdownload%2Fnode-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
+  integrity sha1-5jNFY4bUqlWGP2dqerDaqP3ssP0=
 
 node-forge@0.9.0:
   version "0.9.0"
@@ -8312,12 +8331,35 @@ p-map@^3.0.0:
   dependencies:
     aggregate-error "^3.0.0"
 
+p-memoize@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.npm.taobao.org/p-memoize/download/p-memoize-3.1.0.tgz#ac7587983c9e530139f969ca7b41ef40e93659aa"
+  integrity sha1-rHWHmDyeUwE5+WnKe0HvQOk2Wao=
+  dependencies:
+    mem "^4.3.0"
+    mimic-fn "^2.1.0"
+
+p-queue@^6.2.0:
+  version "6.2.1"
+  resolved "https://registry.npm.taobao.org/p-queue/download/p-queue-6.2.1.tgz#809a832046451b2240a0a8e48b4fa18192b22b64"
+  integrity sha1-gJqDIEZFGyJAoKjki0+hgZKyK2Q=
+  dependencies:
+    eventemitter3 "^4.0.0"
+    p-timeout "^3.1.0"
+
 p-retry@^3.0.1:
   version "3.0.1"
   resolved "https://registry.npm.taobao.org/p-retry/download/p-retry-3.0.1.tgz#316b4c8893e2c8dc1cfa891f406c4b422bebf328"
   integrity sha1-MWtMiJPiyNwc+okfQGxLQivr8yg=
   dependencies:
     retry "^0.12.0"
+
+p-timeout@^3.1.0:
+  version "3.2.0"
+  resolved "https://registry.npm.taobao.org/p-timeout/download/p-timeout-3.2.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fp-timeout%2Fdownload%2Fp-timeout-3.2.0.tgz#c7e17abc971d2a7962ef83626b35d635acf23dfe"
+  integrity sha1-x+F6vJcdKnli74NiazXWNazyPf4=
+  dependencies:
+    p-finally "^1.0.0"
 
 p-try@^1.0.0:
   version "1.0.0"
@@ -11901,6 +11943,13 @@ textlint-rule-en-capitalization@^2.0.2:
     sentence-splitter "^3.0.11"
     textlint-rule-helper "^2.1.1"
 
+textlint-rule-helper@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.npm.taobao.org/textlint-rule-helper/download/textlint-rule-helper-2.0.1.tgz#f28dc20d3e06f60373aa04a97b965daa77d196b9"
+  integrity sha1-8o3CDT4G9gNzqgSpe5ZdqnfRlrk=
+  dependencies:
+    unist-util-visit "^1.1.0"
+
 textlint-rule-helper@^1.1.5:
   version "1.2.0"
   resolved "https://registry.npm.taobao.org/textlint-rule-helper/download/textlint-rule-helper-1.2.0.tgz#be68d47a5146b16dd116278c9aeb7bd35631ccda"
@@ -11917,6 +11966,19 @@ textlint-rule-helper@^2.0.0, textlint-rule-helper@^2.1.1:
     "@textlint/types" "^1.1.2"
     structured-source "^3.0.2"
     unist-util-visit "^1.1.0"
+
+textlint-rule-no-dead-link@^4.6.2:
+  version "4.6.2"
+  resolved "https://registry.npm.taobao.org/textlint-rule-no-dead-link/download/textlint-rule-no-dead-link-4.6.2.tgz#1f3ef17aa56b8a6918cce919eeb05032f38922d1"
+  integrity sha1-Hz7xeqVrimkYzOkZ7rBQMvOJItE=
+  dependencies:
+    fs-extra "^8.1.0"
+    get-url-origin "^1.0.1"
+    minimatch "^3.0.4"
+    node-fetch "^2.6.0"
+    p-memoize "^3.1.0"
+    p-queue "^6.2.0"
+    textlint-rule-helper "^2.1.1"
 
 textlint-rule-stop-words@^1.0.17:
   version "1.0.17"
@@ -11944,7 +12006,16 @@ textlint-rule-write-good@^1.6.2:
     textlint-rule-helper "^2.0.0"
     write-good "^0.11.0"
 
-textlint@^11.5.0:
+textlint-tester@5.0.1:
+  version "5.0.1"
+  resolved "https://registry.npm.taobao.org/textlint-tester/download/textlint-tester-5.0.1.tgz#968b4b34bbda2614a99ec85b82c56488c86bc255"
+  integrity sha1-lotLNLvaJhSpnshbgsVkiMhrwlU=
+  dependencies:
+    "@textlint/feature-flag" "^3.0.5"
+    "@textlint/kernel" "^3.0.0"
+    textlint "^11.0.1"
+
+textlint@^11.0.1, textlint@^11.5.0:
   version "11.5.0"
   resolved "https://registry.npm.taobao.org/textlint/download/textlint-11.5.0.tgz#21871cee6845cf7fe6ca2707039ed3bf7c09d2f1"
   integrity sha1-IYcc7mhFz3/myicHA57Tv3wJ0vE=
