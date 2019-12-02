@@ -22,7 +22,7 @@ meta:
 
 ## [前端](fe/)
 
-主要是基础的 Javascript, CSS3，Typescript 以及前端框架，比如 Vue。
+主要是基础的 JavaScript, CSS3，TypeScript 以及前端框架，比如 Vue。
 
 目录如下：
 
@@ -32,7 +32,7 @@ meta:
 - CSS3
   - 待定
 - [TypeScript](fe/ts/)
-  - Typescript 官方资料
+  - TypeScript 官方资料
 - [Vue](fe/vue/)
   - Vue 官方资料
 

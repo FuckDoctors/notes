@@ -8,36 +8,36 @@ meta:
     content: JavaScript深入浅出 数据类型
   - name: keywords
     content: JavaScript深入浅出 数据类型 隐式转换 typeof instanceOf prototype
-tags:
+tag:
   - js
 ---
 
 # 第 1 章 数据类型
 
-## 1-1 JavaScript 深入浅出课程介绍
+## 1-1 深入浅出课程介绍
 
 略
 
-## 1-2 JavaScript 六种数据类型
+## 1-2 六种数据类型
 
 原始类型（基本类型）：
 
-- number
-- string
-- boolean
-- null
-- undefined
+- `number`
+- `string`
+- `boolean`
+- `null`
+- `undefined`
 
 除此之外，JavaScript 还有一种对象类型（复合类型）`object`。
 
-object 包含以下类型：
+`object` 包含以下类型：
 
-- Function
-- Array
-- Date
+- `Function`
+- `Array`
+- `Date`
 - ...
 
-## 1-3 JavaScript 隐式转换
+## 1-3 隐式转换
 
 关于`+`和`-`：
 `+`隐式转为字符串，`-`隐式转换为数字。
@@ -51,9 +51,9 @@ object 包含以下类型：
 
 因此可以巧用`+`和`-`转换数据类型，比如使用`- 0`（减 0），转换为数字，使用`+ ''`（加空字符串）转换为字符串。
 
-## 1-4 JavaScript 包装对象
+## 1-4 包装对象
 
-[1-2 JavaScript 六种数据类型](#1-2%20JavaScript%20六种数据类型) 中介绍的 5 种基本类型和一种对象类型，其中 5 中基本类型都有其对应的包装类型。
+[1-2 六种数据类型](#_1-2-六种数据类型) 中介绍的 5 种基本类型和一种对象类型，其中 5 中基本类型都有其对应的包装类型。
 
 当把一个基本类型作为对象使用时，JavaScript 会尝试将基本类型转换为包装对象，想定于 new 了一个临时对象，对象的值为基本类型的值。
 
@@ -65,21 +65,24 @@ object 包含以下类型：
 ::: warning
 图片名中不能出现`#`，否则会会有问题：
 
-1. markdown 插入图片的方式，不能显示图片
-2. html 插入图片的方式会报错。
+1. Markdown 插入图片的方式，不能显示图片
+2. HTML 插入图片的方式会报错。
    :::
 
-## 1-5 JavaScript 类型检查
+## 1-5 类型检查
 
-Javascript 中检查类型的方法有很多，比如：
+JavaScript 中检查类型的方法有很多，比如：
 
-- typeof
-- instanceof
-- Object.prototype.toString
-- constructor
+- `typeof`
+- `instanceof`
+- `Object.prototype.toString`
+- `constructor`
+
+  注意：使用 textlint 时，报`TypeError: entry.split is not a function`，所以上面加了引号。
+
 - duck type
 
-### typeof
+### `typeof`
 
 `typeof`返回一个字符串，它非常适合函数对象和基本类型的判断。
 
@@ -97,7 +100,7 @@ Javascript 中检查类型的方法有很多，比如：
 |        typeof [1, 2] | "object"    |
 |           typeof NaN | "number"    |
 
-### instanceof
+### `instanceof`
 
 `instanceof`常用于对象类型的判断，它是基于`原型链`的形式去判断的操作符。
 
@@ -119,7 +122,7 @@ Javascript 中检查类型的方法有很多，比如：
 
 例子：
 
-::: demo html
+::: demo HTML
 
 <script>
 function Person() {}
@@ -144,7 +147,7 @@ Caution!
 不同 window 或 iframe 间的对象类型检查不能使用 instanceof!
 :::
 
-### Object.prototype.toString
+### `Object.prototype.toString`
 
 |                                          命令 | 结果                 |
 | --------------------------------------------: | :------------------- |
@@ -159,9 +162,9 @@ IE6/7/8 Object.prototype.toString.apply(null)返回"[object Object]"
 
 ### 类型检查小结
 
-- typeof
+- `typeof`
   适合基本类型及 function 检测，遇到 null 失效。
-- Object.prototype.toString
+- `Object.prototype.toString`
   通过 Object.prototype.toString 拿到，适合内置对象和基本类型，遇到 null 和 undefined 失效（IE6/7/8 等返回[object Object]）。
-- instanceof
+- `instanceof`
   适合自定义对象，也可以用来检测原生对象，在不同 iframe 和 window 间检测时失效。

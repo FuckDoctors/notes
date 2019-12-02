@@ -6,16 +6,16 @@ prev: ../
 next: ./bosn/
 meta:
   - name: description
-    content: Javascript学习笔记
+    content: JavaScript学习笔记
   - name: keywords
-    content: Javascript 学习笔记
+    content: JavaScript 学习笔记
 ---
 
-# Javascript 学习笔记
+# JavaScript 学习笔记
 
 <!-- <Breadcrumb /> -->
 
-记录基础的 Javascript 知识，也会包含 ES5 及以前的内容。
+记录基础的 JavaScript 知识，也会包含 ES5 及以前的内容。
 
 目录：
 
