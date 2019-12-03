@@ -13078,7 +13078,7 @@ vuepress-plugin-disqus-comment@^0.2.3:
   dependencies:
     vue-disqus "^3.0.5"
 
-vuepress-plugin-sitemap@^2.3.0:
+vuepress-plugin-sitemap@^2.3.0, vuepress-plugin-sitemap@^2.3.1:
   version "2.3.1"
   resolved "https://registry.npm.taobao.org/vuepress-plugin-sitemap/download/vuepress-plugin-sitemap-2.3.1.tgz#51298aca77a5de96396fdbd1103e1637dd61ae6a"
   integrity sha1-USmKynel3pY5b9vRED4WN91hrmo=

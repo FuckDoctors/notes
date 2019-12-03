@@ -8,30 +8,31 @@ module.exports = [
     link: '/blogs/'
   },
   {
-    text: '了解更多',
+    text: '标签',
+    link: '/tag/',
     items: [
       {
         text: '前端',
         items: [
           {
             text: 'HTML',
-            link: '/tags/html/'
+            link: '/tag/html/'
           },
           {
-            text: 'Javascript',
-            link: '/tags/js/'
+            text: 'JavaScript',
+            link: '/tag/js/'
           },
           {
             text: 'CSS',
-            link: '/tags/css/'
+            link: '/tag/css/'
           },
           {
-            text: 'Typescript',
-            link: '/tags/ts/'
+            text: 'TypeScript',
+            link: '/tag/ts/'
           },
           {
             text: 'Vue',
-            link: '/tags/vue/'
+            link: '/tag/vue/'
           }
         ]
       },
@@ -40,25 +41,21 @@ module.exports = [
         items: [
           {
             text: 'Java',
-            link: '/tags/java/'
+            link: '/tag/java/'
           },
           {
             text: '.Net',
-            link: '/tags/.net/'
+            link: '/tag/.net/'
           },
           {
             text: 'Spring',
-            link: '/tags/spring/'
+            link: '/tag/spring/'
           }
         ]
       },
       {
         text: '其他',
         items: [
-          {
-            text: '全部标签',
-            link: '/tags/'
-          },
           {
             text: '术语',
             link: '/miscellaneous/glossary/'
