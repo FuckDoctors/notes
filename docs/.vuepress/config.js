@@ -1,8 +1,10 @@
 const sideBarUtil = require('./sidebar/sideBarUtil');
 const sideBarMap = require('./sidebar/sidebarMap');
 
+const BASE = require('./config.site').BASE;
+
 module.exports = {
-  base: '/notes/',
+  base: `${BASE}/`,
   locales: {
     // 键名是该语言所属的子路径
     // 作为特例，默认语言可以使用 '/' 作为其路径。
@@ -72,7 +74,7 @@ module.exports = {
     'vuepress-plugin-smooth-scroll'
   ],
 
-  // theme: '@theme',
+  theme: '@theme',
   // theme: require.resolve('./theme'),
   themeConfig: {
     repo: 'FuckDoctors/notes',
