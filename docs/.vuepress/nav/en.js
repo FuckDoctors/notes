@@ -5,33 +5,34 @@ module.exports = [
   },
   {
     text: 'Blogs',
-    link: '/en/blogs/'
+    link: '/en/blog/'
   },
   {
-    text: 'More',
+    text: 'Tags',
+    link: '/en/tag/',
     items: [
       {
         text: 'Front-End',
         items: [
           {
             text: 'HTML',
-            link: '/en/tags/html/'
+            link: '/en/tag/html/'
           },
           {
-            text: 'Javascript',
-            link: '/en/tags/js/'
+            text: 'JavaScript',
+            link: '/en/tag/js/'
           },
           {
             text: 'CSS',
-            link: '/en/tags/css/'
+            link: '/en/tag/css/'
           },
           {
-            text: 'Typescript',
-            link: '/en/tags/ts/'
+            text: 'TypeScript',
+            link: '/en/tag/ts/'
           },
           {
             text: 'Vue',
-            link: '/en/tags/vue/'
+            link: '/en/tag/vue/'
           }
         ]
       },
@@ -40,15 +41,15 @@ module.exports = [
         items: [
           {
             text: 'Java',
-            link: '/en/tags/java/'
+            link: '/en/tag/java/'
           },
           {
             text: '.Net',
-            link: '/en/tags/.net/'
+            link: '/en/tag/.net/'
           },
           {
             text: 'Spring',
-            link: '/en/tags/spring/'
+            link: '/en/tag/spring/'
           }
         ]
       },
@@ -56,12 +57,12 @@ module.exports = [
         text: 'Other',
         items: [
           {
-            text: 'All Tags',
-            link: '/en/tags/'
-          },
-          {
             text: 'Glossary',
             link: '/en/miscellaneous/glossary/'
+          },
+          {
+            text: 'All Tags',
+            link: '/en/tag/'
           }
         ]
       }

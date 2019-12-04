@@ -2,9 +2,15 @@
 // https://github.com/prettier/eslint-config-prettier/blob/master/README.md
 module.exports = {
   // parser: '@typescript-eslint/parser',
+  parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
+    extraFileExtensions: ['.vue'],
     project: './tsconfig.json'
+  },
+  env: {
+    node: true,
+    browser: true
   },
   extends: [
     // add more generic rulesets here, such as:
