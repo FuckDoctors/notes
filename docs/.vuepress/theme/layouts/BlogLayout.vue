@@ -20,7 +20,29 @@
           <slot name="blog-left" />
         </div>
         <div class="main">
-          <slot />
+          <slot>
+            <template v-if="/\/blog\/$/.test($page.regularPath) && $pagination">
+              <ul v-if="$pagination.pages" id="default-layout">
+                <li v-for="page in $pagination.pages" :key="page.path">
+                  <router-link class="page-link" :to="page.path">{{
+                    page.title
+                  }}</router-link>
+                </li>
+              </ul>
+              <div id="pagination">
+                <router-link
+                  v-if="$pagination.hasPrev"
+                  :to="$pagination.prevLink"
+                  >Prev</router-link
+                >
+                <router-link
+                  v-if="$pagination.hasNext"
+                  :to="$pagination.nextLink"
+                  >Next</router-link
+                >
+              </div>
+            </template>
+          </slot>
         </div>
         <div class="right">
           <slot name="blog-left" />
@@ -64,6 +86,7 @@ export default {
   },
 
   mounted() {
+    console.log(this.$page.regularPath);
     this.$router.afterEach(() => {
       this.isSidebarOpen = false;
     });
