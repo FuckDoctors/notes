@@ -23,6 +23,18 @@ module.exports = {
             itemPermalink: '/blog/:year/:month/:day/:slug',
             layout: 'BlogLayout',
             itemLayout: 'PostLayout'
+          },
+          {
+            // Unique ID of current classification
+            id: 'en_post',
+            // Target directory
+            dirname: 'en/posts',
+            path: '/en/blog/',
+            frontmatter: { title: 'Blog' },
+            // 多语言支持，此处itemPermalink不能再加语言前缀，不然会出两次，比如：/en/en/blog/xxx
+            itemPermalink: '/blog/:year/:month/:day/:slug',
+            layout: 'BlogLayout',
+            itemLayout: 'PostLayout'
           }
         ],
         frontmatters: [

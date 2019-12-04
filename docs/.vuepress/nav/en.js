@@ -61,8 +61,9 @@ module.exports = [
             link: '/en/miscellaneous/glossary/'
           },
           {
+            // tag不区分语言了
             text: 'All Tags',
-            link: '/en/tag/'
+            link: '/tag/'
           }
         ]
       }
