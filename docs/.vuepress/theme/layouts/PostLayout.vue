@@ -1,14 +1,18 @@
 <template>
-  <div class="post-layout">
-    <div class="post">Post</div>
-    <Content />
-  </div>
+  <BlogLayout>
+    <div class="post-layout">
+      <Content />
+    </div>
+  </BlogLayout>
 </template>
 
 <script>
+import BlogLayout from './BlogLayout';
+
 export default {
-  data() {
-    return {};
+  name: 'PostLayout',
+  components: {
+    BlogLayout
   }
 };
 </script>

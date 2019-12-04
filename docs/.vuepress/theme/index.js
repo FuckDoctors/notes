@@ -1,4 +1,4 @@
-const BASE = require('../config.site').BASE;
+// const BASE = require('../config.site').BASE;
 
 module.exports = {
   extend: '@vuepress/theme-default',
@@ -12,13 +12,15 @@ module.exports = {
             id: 'post',
             // Target directory
             dirname: 'posts',
-            // 开始使用时，搞了好久，命名感觉配的没问题，死活出不来，最后发现此处的path不能跟之前的navbar里的link重复？？
-            // 需要看看这里：
-            // https://github.com/vuepressjs/vuepress-plugin-blog/blob/fa62f58048b6b79b8f0404006101de26cd795291/src/node/handleOptions.ts#L97
+            // 开始使用时，搞了好久，命名感觉配的没问题，死活出不来，debug vuepress 的 node/handleOptions 之后，
+            // 发现配置什么的都对，posts下面的东西也没问题，不使用permalink，而是使用/posts/xxx.html可以正常访问，
+            // 然后自动跳转到permalink，发现跳转后的permalink自动拼接了base，所以要去掉。
+            // 之前调查需要拼接base是多此一举。
             // Path of the `entry page` (or `list page`)
-            path: `${BASE}/blogs/`,
+            // 此处不用加base
+            path: '/blog/',
             frontmatter: { title: 'Blog' },
-            itemPermalink: `${BASE}/blogs/:year/:month/:day/:slug`,
+            itemPermalink: '/blog/:year/:month/:day/:slug',
             layout: 'BlogLayout',
             itemLayout: 'PostLayout'
           }
@@ -30,7 +32,7 @@ module.exports = {
             // Decide that the frontmatter keys will be grouped under this classification
             keys: ['tag', 'tags'],
             // Path of the `entry page` (or `list page`)
-            path: `${BASE}/tag/`,
+            path: '/tag/',
             frontmatter: { title: 'Tag' },
             layout: 'BlogTagsLayout',
             // Layout of the `scope page`

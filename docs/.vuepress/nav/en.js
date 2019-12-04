@@ -5,7 +5,7 @@ module.exports = [
   },
   {
     text: 'Blogs',
-    link: '/en/blogs/'
+    link: '/en/blog/'
   },
   {
     text: 'Tags',
@@ -59,6 +59,10 @@ module.exports = [
           {
             text: 'Glossary',
             link: '/en/miscellaneous/glossary/'
+          },
+          {
+            text: 'All Tags',
+            link: '/en/tag/'
           }
         ]
       }

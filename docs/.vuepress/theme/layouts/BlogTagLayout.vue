@@ -1,7 +1,11 @@
 <template>
   <BlogLayout>
     <div class="blog-tag-container">
-      <div class="blog-tag-page" v-for="page in $pagination.pages" :key="page.path">
+      <div
+        v-for="page in $pagination.pages"
+        :key="page.path"
+        class="blog-tag-page"
+      >
         <router-link class="blog-tag-link" :to="page.path">
           {{ page.title }}
         </router-link>

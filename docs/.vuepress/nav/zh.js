@@ -5,7 +5,7 @@ module.exports = [
   },
   {
     text: '博客',
-    link: '/blogs/'
+    link: '/blog/'
   },
   {
     text: '标签',
@@ -59,6 +59,10 @@ module.exports = [
           {
             text: '术语',
             link: '/miscellaneous/glossary/'
+          },
+          {
+            text: '全部标签',
+            link: '/tag/'
           }
         ]
       }

@@ -6,11 +6,13 @@
 
 <script>
 import BlogLayout from './BlogLayout';
+import BlogTags from '@theme/components/BlogTags';
 
 export default {
   name: 'BlogTagsLayout',
   components: {
-    BlogLayout
+    BlogLayout,
+    BlogTags
   }
 };
 </script>

@@ -14,7 +14,8 @@
     "eslint": "eslint --quiet --fix .",
     "check-all": "yarn lint-md && yarn format:check && yarn lint-css && yarn eslint:check",
     "release": "standard-version",
-    "debug:textlint": "node --inspect-brk=9229 ./node_modules/.bin/textlint docs/notes/fe/js/bosn/chapter01.md"
+    "debug:textlint": "node --inspect-brk=9229 ./node_modules/.bin/textlint docs/notes/fe/js/bosn/chapter01.md",
+    "debug:vuepress": "node --inspect-brk=9229 ./node_modules/vuepress/cli.js dev docs --debug --no-clear-screen"
   },
   "husky": {
     "hooks": {
