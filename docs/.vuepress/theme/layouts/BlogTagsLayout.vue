@@ -1,6 +1,6 @@
 <template>
   <BlogLayout>
-    <BlogTags :tags="$frontmatterKey.list"/>
+    <BlogTags :tags="$frontmatterKey.list" />
   </BlogLayout>
 </template>
 

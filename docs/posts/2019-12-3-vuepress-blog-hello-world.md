@@ -5,9 +5,9 @@ tags:
   - vuepress-blog
 author: zhaobc
 location: Jinan
-title: Hello Vuepress Blog
+title: Hello VuePress Blog
 ---
 
-## Hello Vuepress Blog
+## Hello VuePress Blog
 
 Hello World!

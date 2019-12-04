@@ -11742,6 +11742,11 @@ stylelint-prettier@^1.1.1:
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
+stylelint-use-nesting@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.npm.taobao.org/stylelint-use-nesting/download/stylelint-use-nesting-1.2.1.tgz#6a71baeb36766d3ea66aecd5fbb3ab8942921a25"
+  integrity sha1-anG66zZ2bT6mauzV+7OriUKSGiU=
+
 stylelint@^12.0.0:
   version "12.0.0"
   resolved "https://registry.npm.taobao.org/stylelint/download/stylelint-12.0.0.tgz?cache=0&sync_timestamp=1573907715226&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fstylelint%2Fdownload%2Fstylelint-12.0.0.tgz#2e8613675f7be11769ce474f45137fdf7751380a"

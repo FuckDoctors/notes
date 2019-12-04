@@ -19,6 +19,7 @@ module.exports = {
     require('postcss-mixins'),
     require('postcss-simple-vars'),
     require('postcss-nested'),
+    require('postcss-calc'),
     require('postcss-cssnext')({
       browsers: 'last 2 versions'
     }),
