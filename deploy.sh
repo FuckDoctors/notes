@@ -22,7 +22,7 @@ EOF
 
 git init
 git add -A
-git commit -m "Deploying docs [ci skip] at $(date "+%Y-%m-%d %H:%M:%S %z")"
+git commit -m "Deploying docs [ci skip] at $(TZ='Asia/Shanghai' date "+%Y-%m-%d %H:%M:%S %z")"
 
 git push -f git@github.com:FuckDoctors/notes.git master:gh-pages
 
