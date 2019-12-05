@@ -15,6 +15,7 @@ defaults: &defaults
     - image: circleci/node:latest
       environment:
           TZ: "Asia/Shanghai"
+          LC_TIME: "en_US.UTF-8"
 
 jobs:
 
