@@ -86,7 +86,7 @@ export default {
   },
 
   mounted() {
-    console.log(this.$page.regularPath);
+    // console.log(this.$page.regularPath);
     this.$router.afterEach(() => {
       this.isSidebarOpen = false;
     });

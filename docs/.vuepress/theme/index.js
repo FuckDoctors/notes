@@ -49,6 +49,18 @@ module.exports = {
             layout: 'BlogTagsLayout',
             // Layout of the `scope page`
             scopeLayout: 'BlogTagLayout'
+          },
+          {
+            // Unique ID of current classification
+            id: 'en_tag',
+            // Decide that the frontmatter keys will be grouped under this classification
+            keys: ['tag', 'tags'],
+            // Path of the `entry page` (or `list page`)
+            path: '/en/tag/',
+            frontmatter: { title: 'Tag' },
+            layout: 'BlogTagsLayout',
+            // Layout of the `scope page`
+            scopeLayout: 'BlogTagLayout'
           }
         ]
       }
