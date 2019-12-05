@@ -13,7 +13,7 @@ defaults: &defaults
   working_directory: ~/project
   docker:
     - image: circleci/node:latest
-      # environment:
+      environment:
           TZ: "Asia/Shanghai"
           # 加上LC_TIME后依然显示上午，下午格式
           # LC_TIME: "en_US.UTF-8"
