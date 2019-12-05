@@ -4,6 +4,8 @@ const sideBarMap = require('./sidebar/sidebarMap');
 const BASE = require('./config.site').BASE;
 const HOST_NAME = require('./config.site').HOST_NAME;
 
+const dayjs = require('dayjs');
+
 module.exports = {
   base: `${BASE}/`,
   locales: {
@@ -59,7 +61,9 @@ module.exports = {
       '@vuepress/last-updated',
       {
         transformer: (timestamp, lang) => {
-          console.log(`timestamp: ${timestamp}, lang: ${lang}`);
+          // console.log(`timestamp: ${timestamp}, lang: ${lang}`);
+          // 为了暂时兼容vuepress-plugin-sitemap，固定统一格式
+          return dayjs(timestamp).format('YYYY/MM/DD HH:mm:ss');
         }
       }
     ],
@@ -78,7 +82,8 @@ module.exports = {
       {
         hostname: HOST_NAME,
         dateFormatter: time => {
-          console.log(`time: ${time}`);
+          // console.log(`time: ${time}`);
+          // 没有指定lang，@vuepress/last-updated默认使用toLocaleString，此处默认new Date会失败
           return new Date(time).toISOString();
         }
       }
