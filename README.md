@@ -30,6 +30,7 @@
 - 其他插件
   - Code Spell Checker
   - Path Intellisense
+  - PostCSS Language Support
   - 略
 
 ## 使用的 nodejs 工具
