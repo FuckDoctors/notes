@@ -5,6 +5,6 @@ apps:
   - port: 8080 # 应用的端口
     run: yarn docs:dev # 应用的启动命令
     root: ./ # 应用的启动目录
-    name: learning-notes # 应用名称
-    description: 学习笔记。 # 应用描述
+    name: notes # 应用名称
+    description: 笔记 # 应用描述
     autoOpen: false # 打开工作空间时是否自动开启预览（优先级高于根级 autoOpen）

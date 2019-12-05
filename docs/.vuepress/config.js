@@ -69,7 +69,11 @@ module.exports = {
     [
       'sitemap',
       {
-        hostname: HOST_NAME
+        hostname: HOST_NAME,
+        dateFormatter: time => {
+          console.log(time);
+          return new Date(time).toISOString();
+        }
       }
     ],
     [

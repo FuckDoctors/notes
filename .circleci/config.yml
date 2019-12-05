@@ -134,7 +134,9 @@ workflows:
             - check
           filters:
             branches:
-              only: master
+              only:
+                - master
+                - dev
       - deploy:
           requires:
             - build
