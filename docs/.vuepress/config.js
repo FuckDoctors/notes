@@ -55,7 +55,16 @@ module.exports = {
   plugins: [
     '@vuepress/active-header-links',
     '@vuepress/register-components',
-    // '@vuepress/last-updated',
+    [
+      '@vuepress/last-updated',
+      {
+        transformer: (timestamp, lang) => {
+          // console.log(`timestamp: ${timestamp}, lang: ${lang}`);
+          // 为了暂时兼容vuepress-plugin-sitemap，固定统一格式
+          return dayjs(timestamp).format('YYYY/MM/DD HH:mm:ss');
+        }
+      }
+    ],
     '@vuepress/nprogress',
     [
       '@vuepress/pwa',
@@ -69,7 +78,12 @@ module.exports = {
     [
       'sitemap',
       {
-        hostname: HOST_NAME
+        hostname: HOST_NAME,
+        dateFormatter: time => {
+          // console.log(`time: ${time}`);
+          // 没有指定lang，@vuepress/last-updated默认使用toLocaleString，此处默认new Date会失败
+          return new Date(time).toISOString();
+        }
       }
     ],
     [

@@ -15,6 +15,11 @@ defaults: &defaults
     - image: circleci/node:latest
       environment:
           TZ: "Asia/Shanghai"
+          # # 加上LC_TIME后依然显示上午，下午格式
+          # # LC_TIME: "en_US.UTF-8"
+          # # LC_ALL也不行
+          # LC_ALL: "en_US.UTF-8"
+          # LANG: "en_US.UTF-8"
 
 jobs:
 
@@ -138,4 +143,8 @@ workflows:
       - deploy:
           requires:
             - build
+          filters:
+            branches:
+              only:
+                - master
 
