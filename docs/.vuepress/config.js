@@ -55,14 +55,14 @@ module.exports = {
   plugins: [
     '@vuepress/active-header-links',
     '@vuepress/register-components',
-    [
-      '@vuepress/last-updated',
-      {
-        transformer: (timestamp, lang) => {
-          console.log(`timestamp: ${timestamp}, lang: ${lang}`);
-        }
-      }
-    ],
+    // [
+    //   '@vuepress/last-updated',
+    //   {
+    //     transformer: (timestamp, lang) => {
+    //       console.log(`timestamp: ${timestamp}, lang: ${lang}`);
+    //     }
+    //   }
+    // ],
     '@vuepress/nprogress',
     [
       '@vuepress/pwa',
@@ -78,7 +78,7 @@ module.exports = {
       {
         hostname: HOST_NAME,
         dateFormatter: time => {
-          console.log(`time: ${time}`);
+          // console.log(`time: ${time}`);
           return new Date(time).toISOString();
         }
       }
