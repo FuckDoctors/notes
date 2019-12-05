@@ -4,6 +4,8 @@ const sideBarMap = require('./sidebar/sidebarMap');
 const BASE = require('./config.site').BASE;
 const HOST_NAME = require('./config.site').HOST_NAME;
 
+const dayjs = require('dayjs');
+
 module.exports = {
   base: `${BASE}/`,
   locales: {
