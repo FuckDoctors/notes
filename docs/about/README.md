@@ -10,3 +10,12 @@ meta:
 ---
 
 # 关于我
+
+<CodeBox id="test" title="Test">
+  <template slot="description">
+    <span>描述</span>
+  </template>
+  <template slot="code">
+    <span>代码</span>
+  </template>
+</CodeBox>
