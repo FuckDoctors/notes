@@ -99,7 +99,7 @@ export default {
   },
   data() {
     return {
-      sourceCode: '',
+      sourceCode: 'test',
       codeExpand: false,
       copied: false,
       copyTooltipVisible: false
