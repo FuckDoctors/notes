@@ -76,7 +76,14 @@ module.exports = {
       }
     ],
     '@vuepress/back-to-top',
-    '@vuepress/medium-zoom',
+    [
+      '@vuepress/medium-zoom',
+      {
+        // 默认值
+        // selector: '.theme-default-content :not(a) > img'
+        selector: 'img:not(.no-zoom)'
+      }
+    ],
     [
       'sitemap',
       {

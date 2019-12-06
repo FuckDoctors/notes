@@ -1,5 +1,19 @@
 /* https://github.com/ant-design/ant-design/blob/master/site/theme/static/demo.less */
 
+.markdown {
+  color: #314659;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.markdown img {
+  max-width: calc(100% - 32px);
+}
+
+.anticon[tabindex] {
+  cursor: pointer;
+}
+
 .code-boxes-col-1-1 {
   width: 100%;
 }
@@ -182,11 +196,14 @@
     > form,
     > span {
       position: relative;
-      display: inline-block;
+      /* 开始页面上的show code按钮没有了，比较奇怪的是这个inline-block没有了，其他都在。。。 */
+      /* 调查了好一会。。。最后加了个!important */
+      display: inline-block !important;
       width: 16px;
       height: 16px;
       margin-left: 16px;
       vertical-align: top;
+      cursor: pointer;
 
       &:first-child {
         margin-left: 0;

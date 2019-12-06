@@ -32,8 +32,38 @@
         <slot name="description"></slot>
       </div>
       <div class="code-box-actions">
-        <a-tooltip :title="copied ? 'copied' : 'copy'">
-          <a-icon :type="copied ? 'check' : 'snippets'"></a-icon>
+        <a-tooltip
+          :title="copied ? 'copied' : 'copy'"
+          :visible="copyTooltipVisible"
+          @visibleChange="onCopyTooltipVisibleChange"
+        >
+          <a-icon
+            :type="copied && copyTooltipVisible ? 'check' : 'snippets'"
+            v-clipboard:copy="sourceCode"
+            v-clipboard:success="handleCodeCopied"
+          ></a-icon>
+        </a-tooltip>
+        <a-tooltip :title="codeExpand ? 'hide' : 'show'">
+          <span class="code-expand-icon">
+            <img
+              alt="expand code"
+              src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg"
+              :class="[
+                'no-zoom',
+                codeExpand ? 'code-expand-icon-hide' : 'code-expand-icon-show'
+              ]"
+              @click="handleCodeExpand"
+            />
+            <img
+              alt="expand code"
+              src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg"
+              :class="[
+                'no-zoom',
+                codeExpand ? 'code-expand-icon-show' : 'code-expand-icon-hide'
+              ]"
+              @click="handleCodeExpand"
+            />
+          </span>
         </a-tooltip>
       </div>
     </section>
@@ -69,11 +99,30 @@ export default {
   },
   data() {
     return {
+      sourceCode: '',
       codeExpand: false,
-      copied: false
+      copied: false,
+      copyTooltipVisible: false
     };
   },
   methods: {
+    handleCodeExpand() {
+      this.codeExpand = !this.codeExpand;
+    },
+    handleCodeCopied() {
+      console.log('handleCodeCopied');
+
+      this.copied = true;
+    },
+    onCopyTooltipVisibleChange(visible) {
+      if (visible) {
+        this.copyTooltipVisible = visible;
+        this.copied = false;
+
+        return;
+      }
+      this.copyTooltipVisible = visible;
+    },
     renderIframe() {
       // iframe处理
     }
@@ -81,7 +130,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
 @import './code-box/theme.pcss';
 @import './code-box/code-box.pcss';
 </style>
