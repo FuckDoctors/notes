@@ -65,5 +65,24 @@ module.exports = {
         ]
       }
     ]
-  ]
+  ],
+  chainWebpack: (config, isServer) => {
+    // config 是 ChainableConfig 的一个实例
+    config.module
+      .rule('js')
+      .use('babel-loader')
+      .tap(options => ({
+        ...options,
+        plugins: [
+          [
+            'import',
+            {
+              libraryName: 'ant-design-vue',
+              libraryDirectory: 'lib',
+              style: 'css'
+            }
+          ] // `style: true` 会加载 less 文件
+        ]
+      }));
+  }
 };

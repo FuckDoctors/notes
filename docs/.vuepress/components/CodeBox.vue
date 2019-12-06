@@ -41,13 +41,13 @@
 </template>
 
 <script>
-import { Tooltip as ATooltip, Icon as AIcon } from 'ant-design-vue';
+import { Tooltip as ATooltip, Icon } from 'ant-design-vue';
 
 export default {
   name: 'CodeBox',
   components: {
     ATooltip,
-    AIcon
+    AIcon: Icon
   },
   props: {
     id: {
