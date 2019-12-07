@@ -72,10 +72,10 @@
     >
       <div class="hightlight" :ref="`${id}--code`">
         <template v-if="highlightedCode">
-          {{ highlightedCode }}
+          <div v-html="highlightedCode"></div>
         </template>
         <template v-else>
-          <slot name="code" />
+          <div v-html="renderedCode" class="code"></div>
         </template>
       </div>
     </section>
@@ -84,6 +84,8 @@
 
 <script>
 import { Tooltip as ATooltip, Icon } from 'ant-design-vue';
+
+import highlight from './code-box/highlight';
 
 export default {
   name: 'CodeBox',
@@ -100,8 +102,18 @@ export default {
       type: String,
       default: ''
     },
+    lang: {
+      type: String,
+      default: 'vue'
+    },
+    code: {
+      type: String,
+      default() {
+        return null;
+      }
+    },
     highlightedCode: {
-      type: Object,
+      type: String,
       default: null
     },
     iframe: {
@@ -123,6 +135,16 @@ export default {
   },
   mounted() {
     this.sourceCode = this.getSourceCode();
+  },
+  computed: {
+    renderedCode() {
+      if (this.code) {
+        // highlight code
+        return highlight(this.code, this.lang);
+      }
+
+      return '';
+    }
   },
   methods: {
     handleCodeExpand() {
