@@ -16,8 +16,8 @@
         </div>
       </template>
       <template v-else>
-        <div class="code">
-          <slot name="code" />
+        <div class="preview" :ref="`${id}--preview`">
+          <slot name="preview" />
         </div>
       </template>
     </section>
@@ -67,6 +67,18 @@
         </a-tooltip>
       </div>
     </section>
+    <section
+      :class="['highlight-wrapper', { 'highlight-wrapper-expand': codeExpand }]"
+    >
+      <div class="hightlight" :ref="`${id}--code`">
+        <template v-if="highlightedCode">
+          {{ highlightedCode }}
+        </template>
+        <template v-else>
+          <slot name="code" />
+        </template>
+      </div>
+    </section>
   </section>
 </template>
 
@@ -88,6 +100,10 @@ export default {
       type: String,
       default: ''
     },
+    highlightedCode: {
+      type: Object,
+      default: null
+    },
     iframe: {
       type: Object,
       default: () => null
@@ -105,13 +121,14 @@ export default {
       copyTooltipVisible: false
     };
   },
+  mounted() {
+    this.sourceCode = this.getSourceCode();
+  },
   methods: {
     handleCodeExpand() {
       this.codeExpand = !this.codeExpand;
     },
     handleCodeCopied() {
-      console.log('handleCodeCopied');
-
       this.copied = true;
     },
     onCopyTooltipVisibleChange(visible) {
@@ -122,6 +139,13 @@ export default {
         return;
       }
       this.copyTooltipVisible = visible;
+    },
+    getSourceCode() {
+      if (typeof document !== 'undefined') {
+        this.sourceCode = this.$refs[`${this.id}--code`].textContent;
+        return this.sourceCode;
+      }
+      return '';
     },
     renderIframe() {
       // iframe处理

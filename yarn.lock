@@ -1380,9 +1380,9 @@
     lodash.debounce "^4.0.8"
 
 "@vuepress/plugin-blog@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.npm.taobao.org/@vuepress/plugin-blog/download/@vuepress/plugin-blog-1.5.1.tgz#c78420fc1c050dc3e75467f01e521651f77d4a1c"
-  integrity sha1-x4Qg/BwFDcPnVGfwHlIWUfd9Shw=
+  version "1.5.2"
+  resolved "https://registry.npm.taobao.org/@vuepress/plugin-blog/download/@vuepress/plugin-blog-1.5.2.tgz#d03d94a296ed31e1b686f42bca7be96bc20fcfb5"
+  integrity sha1-0D2UopbtMeG2hvQrynvpa8IPz7U=
   dependencies:
     "@vssue/api-github-v3" "^1.1.2"
     "@vssue/vuepress-plugin-vssue" "^1.2.0"
@@ -9949,7 +9949,7 @@ punycode@^1.2.4, punycode@^1.4.1:
 
 punycode@^2.1.0:
   version "2.1.1"
-  resolved "https://registry.npm.taobao.org/punycode/download/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
+  resolved "https://registry.npm.taobao.org/punycode/download/punycode-2.1.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpunycode%2Fdownload%2Fpunycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha1-tYsBCsQMIsVldhbI0sLALHv0eew=
 
 q@^1.1.2, q@^1.5.1:
@@ -9964,7 +9964,7 @@ qs@6.7.0:
 
 qs@^6.6.0:
   version "6.9.1"
-  resolved "https://registry.npm.taobao.org/qs/download/qs-6.9.1.tgz#20082c65cb78223635ab1a9eaca8875a29bf8ec9"
+  resolved "https://registry.npm.taobao.org/qs/download/qs-6.9.1.tgz?cache=0&sync_timestamp=1573195631718&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fqs%2Fdownload%2Fqs-6.9.1.tgz#20082c65cb78223635ab1a9eaca8875a29bf8ec9"
   integrity sha1-IAgsZct4IjY1qxqerKiHWim/jsk=
 
 qs@~6.5.2:
@@ -13199,7 +13199,7 @@ vue-hot-reload-api@^2.3.0:
 
 vue-i18n@^8.11.2:
   version "8.15.1"
-  resolved "https://registry.npm.taobao.org/vue-i18n/download/vue-i18n-8.15.1.tgz?cache=0&sync_timestamp=1574846293439&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-i18n%2Fdownload%2Fvue-i18n-8.15.1.tgz#90097a08a1e932f645c6b9c404c780d24f6d6224"
+  resolved "https://registry.npm.taobao.org/vue-i18n/download/vue-i18n-8.15.1.tgz?cache=0&sync_timestamp=1574846332347&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-i18n%2Fdownload%2Fvue-i18n-8.15.1.tgz#90097a08a1e932f645c6b9c404c780d24f6d6224"
   integrity sha1-kAl6CKHpMvZFxrnEBMeA0k9tYiQ=
 
 vue-loader@^15.7.1:
@@ -13805,7 +13805,7 @@ xml-escape@^1.0.0:
 
 xmlbuilder@^13.0.0:
   version "13.0.2"
-  resolved "https://registry.npm.taobao.org/xmlbuilder/download/xmlbuilder-13.0.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fxmlbuilder%2Fdownload%2Fxmlbuilder-13.0.2.tgz#02ae33614b6a047d1c32b5389c1fdacb2bce47a7"
+  resolved "https://registry.npm.taobao.org/xmlbuilder/download/xmlbuilder-13.0.2.tgz#02ae33614b6a047d1c32b5389c1fdacb2bce47a7"
   integrity sha1-Aq4zYUtqBH0cMrU4nB/ayyvOR6c=
 
 xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.1:

@@ -15,7 +15,14 @@ meta:
   <template slot="description">
     <span>描述</span>
   </template>
+  <template slot="preview">
+    <span>预览</span>
+  </template>
   <template slot="code">
-    <span>代码</span>
+    <pre>
+      <code>
+      console.log('Hello CodeBox');
+      </code>
+    </pre>
   </template>
 </CodeBox>
