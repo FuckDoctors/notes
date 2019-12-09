@@ -4,10 +4,10 @@
   color: #314659;
   font-size: 14px;
   line-height: 2;
-}
 
-.markdown img {
-  max-width: calc(100% - 32px);
+  img {
+    max-width: calc(100% - 32px);
+  }
 }
 
 .anticon[tabindex] {
@@ -46,6 +46,14 @@
     transition: all 0.3s;
     &:hover {
       opacity: 1;
+    }
+  }
+
+  &-debug {
+    border-color: $purple-3;
+
+    &-title a {
+      color: $purple-6;
     }
   }
 
@@ -106,17 +114,17 @@
       margin: 0;
     }
 
-    h4,
-    section& p {
-      margin: 0;
-    }
-
     > p {
       width: 100%;
       margin: 0.5em 0;
       padding-right: 25px;
       font-size: 12px;
       word-break: break-word;
+    }
+
+    h4,
+    section& p {
+      margin: 0;
     }
   }
 
@@ -150,8 +158,10 @@
     }
   }
 
-  .code-expand-icon.ant-tooltip-open .code-expand-icon-show {
-    opacity: 1;
+  .code-expand-icon.ant-tooltip-open {
+    .code-expand-icon-show {
+      opacity: 1;
+    }
   }
 
   .code-expand-icon-hide {
@@ -166,6 +176,15 @@
 
     &-expand {
       display: block;
+    }
+  }
+
+  pre {
+    width: auto;
+    margin: 0;
+    code {
+      background: #fff;
+      border: none;
     }
   }
 
@@ -192,13 +211,18 @@
       opacity: 1;
     }
 
+    > form {
+      top: -2px;
+    }
+
     > i,
     > form,
     > span {
       position: relative;
       /* 开始页面上的show code按钮没有了，比较奇怪的是这个inline-block没有了，其他都在。。。 */
       /* 调查了好一会。。。最后加了个!important */
-      display: inline-block !important;
+      /* 再次更新：不只这出有问题，nested好像都有问题，最后调整了cssnano的顺序，nested才正常了 */
+      display: inline-block;
       width: 16px;
       height: 16px;
       margin-left: 16px;
@@ -208,10 +232,6 @@
       &:first-child {
         margin-left: 0;
       }
-    }
-
-    > form {
-      top: -2px;
     }
   }
 
@@ -287,31 +307,16 @@
     transition: all 0.3s;
   }
 
+  .show-riddle-button {
+    .code-box-riddle {
+      display: block;
+    }
+  }
+
   .highlight-wrapper:hover &-code-copy,
   .highlight-wrapper:hover &-codepen,
   .highlight-wrapper:hover &-codesandbox,
   .highlight-wrapper:hover &-riddle {
     opacity: 1;
   }
-
-  pre {
-    width: auto;
-    margin: 0;
-    code {
-      background: #fff;
-      border: none;
-    }
-  }
-
-  &-debug {
-    border-color: $purple-3;
-  }
-
-  &-debug &-title a {
-    color: $purple-6;
-  }
-}
-
-.show-riddle-button .code-box-riddle {
-  display: block;
 }

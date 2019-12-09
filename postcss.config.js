@@ -13,9 +13,6 @@ module.exports = {
         })
       ]
     }),
-    require('cssnano')({
-      preset: 'default'
-    }),
     require('postcss-mixins'),
     require('postcss-simple-vars'),
     require('postcss-nested'),
@@ -25,6 +22,9 @@ module.exports = {
     }),
     require('postcss-custom-media'),
     require('postcss-custom-selectors'),
+    require('cssnano')({
+      preset: 'default'
+    }),
     require('postcss-reporter')({
       clearReportedMessages: true
     })
