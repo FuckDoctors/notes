@@ -84,6 +84,7 @@
     "typescript": "^3.7.2",
     "vue-clipboard2": "^0.3.1",
     "vuepress-plugin-demo-code": "^0.4.0",
+    "vuepress-plugin-reading-progress": "^1.0.8",
     "vuepress-plugin-sitemap": "^2.3.1",
     "vuepress-plugin-smooth-scroll": "^0.0.8"
   },

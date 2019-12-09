@@ -13358,6 +13358,11 @@ vuepress-plugin-disqus-comment@^0.2.3:
   dependencies:
     vue-disqus "^3.0.5"
 
+vuepress-plugin-reading-progress@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.npm.taobao.org/vuepress-plugin-reading-progress/download/vuepress-plugin-reading-progress-1.0.8.tgz#92c1b6c150548fe59e71ef30a00fe3a962bcaad0"
+  integrity sha1-ksG2wVBUj+Wece8woA/jqWK8qtA=
+
 vuepress-plugin-sitemap@^2.3.0, vuepress-plugin-sitemap@^2.3.1:
   version "2.3.1"
   resolved "https://registry.npm.taobao.org/vuepress-plugin-sitemap/download/vuepress-plugin-sitemap-2.3.1.tgz#51298aca77a5de96396fdbd1103e1637dd61ae6a"

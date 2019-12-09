@@ -95,6 +95,7 @@ module.exports = {
         }
       }
     ],
+    'reading-progress',
     [
       'demo-code',
       {
