@@ -31,6 +31,7 @@
   border: 1px solid $site-border-color-split;
   border-radius: $border-radius-sm;
   transition: all 0.2s;
+  overflow: hidden;
 
   &:target {
     border: 1px solid $primary-color;
@@ -318,5 +319,25 @@
   .highlight-wrapper:hover &-codesandbox,
   .highlight-wrapper:hover &-riddle {
     opacity: 1;
+  }
+}
+
+/* patch */
+.code-box-code {
+  position: relative;
+
+  .lang {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    height: 15px;
+    line-height: 15px;
+    color: rgba(255, 255, 255, 0.5);
+    user-select: none;
+  }
+
+  pre[class*='language-'] {
+    padding: 10px 20px;
+    border-radius: 0;
   }
 }

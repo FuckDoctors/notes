@@ -13,7 +13,8 @@ function wrap(code, lang) {
   if (lang === 'text') {
     code = escapeHtml(code);
   }
-  return `<pre v-pre class="language-${lang}"><code>${code}</code></pre>`;
+  // return `<pre v-pre class="language-${lang}"><code>${code}</code></pre>`;
+  return `<code data-lang="${lang}">${code}</code>`;
 }
 
 function getLangCodeFromExtension(extension) {

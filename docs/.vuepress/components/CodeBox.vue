@@ -75,7 +75,11 @@
           <div v-html="highlightedCode"></div>
         </template>
         <template v-else>
-          <div v-html="renderedCode" class="code"></div>
+          <!-- <div v-html="renderedCode" class="code-box-code"></div> -->
+          <div class="code-box-code">
+            <span class="lang" v-if="lang">{{ lang.toLowerCase() }}</span>
+            <pre v-html="renderedCode" :class="`language-${lang}`"></pre>
+          </div>
         </template>
       </div>
     </section>
@@ -164,10 +168,33 @@ export default {
     },
     getSourceCode() {
       if (typeof document !== 'undefined') {
-        this.sourceCode = this.$refs[`${this.id}--code`].textContent;
+        // if (this.highlightedCode) {
+        //   this.sourceCode = this.$refs[`${this.id}--code`].textContent;
+        //   return this.sourceCode;
+        // }
+
+        // this.sourceCode = this.$refs[`${this.id}--code`].querySelector('code').textContent;
+
+        // return this.sourceCode;
+
+        let elCode = this.$refs[`${this.id}--code`].querySelector('code');
+        if (elCode) {
+          this.sourceCode = elCode.textContent;
+          return this.sourceCode;
+        }
+
+        elCode = this.$refs[`${this.id}--code`];
+        this.sourceCode = elCode.textContent;
+
         return this.sourceCode;
       }
       return '';
+    },
+    prepareAction() {
+      const prefillStyle = '';
+      const html = `<div id="container"></div>`;
+
+      const sourceCode = this.getSourceCode();
     },
     renderIframe() {
       // iframe处理
