@@ -65,5 +65,38 @@ module.exports = {
         ]
       }
     ]
-  ]
+  ],
+  less: {
+    // https://github.com/ant-design/ant-motion/issues/44#issuecomment-407498459
+    javascriptEnabled: true
+  },
+  chainWebpack: (config, isServer) => {
+    // config 是 ChainableConfig 的一个实例
+    // 使用less错误，加上上面的less-loader options也不行，这里再配置一遍
+    config.module
+      .rule('less')
+      .oneOf('normal')
+      .use('less-loader')
+      .tap(options => ({
+        ...options,
+        javascriptEnabled: true
+      }));
+
+    config.module
+      .rule('js')
+      .use('babel-loader')
+      .tap(options => ({
+        ...options,
+        plugins: [
+          [
+            'import',
+            {
+              libraryName: 'ant-design-vue',
+              libraryDirectory: 'es',
+              style: true
+            }
+          ] // `style: true` 会加载 less 文件
+        ]
+      }));
+  }
 };

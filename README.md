@@ -30,6 +30,7 @@
 - 其他插件
   - Code Spell Checker
   - Path Intellisense
+  - PostCSS Language Support
   - 略
 
 ## 使用的 nodejs 工具
@@ -49,6 +50,8 @@
 - husky
   - 在 pre-commit 时执行`lint-staged`
 - Commitizen
-  - 替代 git commit
+  - 替代 git commit `"prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"`
+  - [How to husky prepare-commit-msg on windows?](https://github.com/commitizen/cz-cli/issues/627#issuecomment-548321151) and [here is the solution](https://github.com/reactionable/reactionable)
+  - 上面的方式在 win7 下有点问题，暂时先恢复，还是先用`yarn cm`
 - commitlint
   - 校验 git commit message

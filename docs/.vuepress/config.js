@@ -76,7 +76,26 @@ module.exports = {
       }
     ],
     '@vuepress/back-to-top',
-    '@vuepress/medium-zoom',
+    [
+      '@vuepress/medium-zoom',
+      {
+        // 默认值
+        // selector: '.theme-default-content :not(a) > img'
+        selector: 'img:not(.no-zoom)'
+      }
+    ],
+    [
+      'sitemap',
+      {
+        hostname: HOST_NAME,
+        dateFormatter: time => {
+          // console.log(`time: ${time}`);
+          // 没有指定lang，@vuepress/last-updated默认使用toLocaleString，此处默认new Date会失败
+          return new Date(time).toISOString();
+        }
+      }
+    ],
+    'reading-progress',
     [
       'sitemap',
       {

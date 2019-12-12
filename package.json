@@ -15,7 +15,8 @@
     "check-all": "yarn lint-md && yarn format:check && yarn lint-css && yarn eslint:check",
     "release": "standard-version",
     "debug:textlint": "node --inspect-brk=9229 ./node_modules/.bin/textlint docs/notes/fe/js/bosn/chapter01.md",
-    "debug:vuepress": "node --inspect-brk=9229 ./node_modules/vuepress/cli.js dev docs --debug --no-clear-screen"
+    "debug:vuepress": "node --inspect-brk=9229 ./node_modules/vuepress/cli.js dev docs --debug --no-clear-screen",
+    "cm": "git-cz"
   },
   "husky": {
     "hooks": {
@@ -35,6 +36,7 @@
     "@vuepress/plugin-medium-zoom": "^1.2.0",
     "@vuepress/plugin-pwa": "^1.2.0",
     "autoprefixer": "^9.7.2",
+    "babel-plugin-import": "^1.13.0",
     "commitizen": "^4.0.3",
     "cssnano": "^4.1.10",
     "cz-conventional-changelog": "3.0.2",
@@ -44,6 +46,8 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^6.0.1",
     "husky": "^3.1.0",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
     "lint-staged": "^9.4.3",
     "postcss": "^7.0.23",
     "postcss-calc": "^7.0.1",
@@ -78,11 +82,14 @@
     "textlint-rule-terminology": "^2.0.1",
     "textlint-rule-write-good": "^1.6.2",
     "typescript": "^3.7.2",
+    "vue-clipboard2": "^0.3.1",
     "vuepress-plugin-demo-code": "^0.4.0",
+    "vuepress-plugin-reading-progress": "^1.0.8",
     "vuepress-plugin-sitemap": "^2.3.1",
     "vuepress-plugin-smooth-scroll": "^0.0.8"
   },
   "dependencies": {
+    "ant-design-vue": "^1.4.8",
     "vuepress": "^1.2.0"
   },
   "config": {
