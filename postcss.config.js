@@ -6,7 +6,11 @@ module.exports = {
     //   extensions: ['.css', '.scss', '.styl']
     // }),
     require('postcss-import')({
-      // filter: url => !/\.scss$|\.styl(us)?$/.test(url),
+      // addModulesDirectories: ['node_modules'],
+      // filter: url => {
+      //   console.log(url);
+      //   return /\.css$|\.p(ost)?css$/.test(url);
+      // },
       plugins: [
         require('stylelint')({
           /* options */
