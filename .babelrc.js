@@ -10,7 +10,7 @@ module.exports = {
     // https://github.com/vuejs/vuepress/pull/644
     [
       'import',
-      { libraryName: 'ant-design-vue', libraryDirectory: 'es', style: 'css' }
+      { libraryName: 'ant-design-vue', libraryDirectory: 'es', style: true }
     ]
   ],
   ignore: ['docs/.vuepress/dist']

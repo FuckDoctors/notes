@@ -97,19 +97,6 @@ module.exports = {
 
     // 使用less错误，加上上面的less-loader options也不行，这里再配置一遍
     // https://github.com/vuejs/vuepress/issues/1871
-    // config.module
-    //   .rule('less')
-    //   .test(/\.less$/)
-    //   .oneOf('normal')
-    //   .use('less-loader')
-    //   .tap(options => ({
-    //     ...options,
-    //     modifyVars: {
-    //       ...require('./styles/antd.hack')
-    //     },
-    //     javascriptEnabled: true
-    //   }));
-
     config.module
       .rule('less')
       .test(/\.less$/)
@@ -117,9 +104,9 @@ module.exports = {
       .use('less-loader')
       .tap(options => ({
         ...options,
-        modifyVars: {
-          ...require('./styles/antd.hack')
-        },
+        // modifyVars: {
+        //   ...require('./styles/antd.hack')
+        // },
         javascriptEnabled: true
       }));
     config.module
@@ -133,21 +120,22 @@ module.exports = {
       }));
 
     // 下面这个不加貌似也可以了，官网号称的已经实现按需加载
-    // config.module
-    //   .rule('js')
-    //   .use('babel-loader')
-    //   .tap(options => ({
-    //     ...options,
-    //     plugins: [
-    //       [
-    //         'import',
-    //         {
-    //           libraryName: 'ant-design-vue',
-    //           libraryDirectory: 'es',
-    //           style: true
-    //         }
-    //       ] // `style: true` 会加载 less 文件
-    //     ]
-    //   }));
+    // 有时候又不行，还是加着吧，webpack-dev的问题？
+    config.module
+      .rule('js')
+      .use('babel-loader')
+      .tap(options => ({
+        ...options,
+        plugins: [
+          [
+            'import',
+            {
+              libraryName: 'ant-design-vue',
+              libraryDirectory: 'es',
+              style: true
+            }
+          ] // `style: true` 会加载 less 文件
+        ]
+      }));
   }
 };
