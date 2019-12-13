@@ -1,5 +1,7 @@
 // const BASE = require('../config.site').BASE;
 
+const path = require('path');
+
 module.exports = {
   extend: '@vuepress/theme-default',
   plugins: [
@@ -70,18 +72,55 @@ module.exports = {
     // https://github.com/ant-design/ant-motion/issues/44#issuecomment-407498459
     javascriptEnabled: true
   },
+  // 这种方式报错，改用chainWebpack方式
+  // configureWebpack: {
+  //   plugins: [
+  //     new require('webpack').NormalModuleReplacementPlugin(
+  //       /node_modules\/ant-design-vue\/es\/style\/index\.less/,
+  //       './styles/antd.hack.less'
+  //     )
+  //   ]
+  // },
   chainWebpack: (config, isServer) => {
     // config 是 ChainableConfig 的一个实例
+
+    // antd global style
+    const NormalModuleReplacementPlugin = require('webpack')
+      .NormalModuleReplacementPlugin;
+    config
+      .plugin('NormalModuleReplacementPlugin')
+      .use(NormalModuleReplacementPlugin, [
+        // 兼容window路径
+        /node_modules[\\\/]ant-design-vue[\\\/]es[\\\/]style[\\\/]index\.less/,
+        path.resolve(__dirname, './styles/antd.hack.less')
+      ]);
+
     // 使用less错误，加上上面的less-loader options也不行，这里再配置一遍
+    // https://github.com/vuejs/vuepress/issues/1871
     config.module
       .rule('less')
+      .test(/\.less$/)
       .oneOf('normal')
+      .use('less-loader')
+      .tap(options => ({
+        ...options,
+        // modifyVars: {
+        //   ...require('./styles/antd.hack')
+        // },
+        javascriptEnabled: true
+      }));
+    config.module
+      .rule('less')
+      .test(/\.less$/)
+      .oneOf('modules')
       .use('less-loader')
       .tap(options => ({
         ...options,
         javascriptEnabled: true
       }));
 
+    // 下面这个不加貌似也可以了，官网号称的已经实现按需加载
+    // 有时候又不行，还是加着吧，webpack-dev的问题？
     config.module
       .rule('js')
       .use('babel-loader')

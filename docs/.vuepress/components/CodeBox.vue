@@ -5,21 +5,24 @@
     :class="['code-box', { expand: codeExpand }, { 'code-box-debug': debug }]"
   >
     <section class="code-box-demo">
-      <template v-if="iframe">
-        <div class="browser-mockup">
-          <iframe
-            :id="`${id}--iframe`"
-            :ref="`${id}--iframe`"
-            src=""
-            frameborder="0"
-          ></iframe>
-        </div>
+      <template v-if="showPreview">
+        <template v-if="iframe">
+          <div class="browser-mockup">
+            <iframe
+              :id="`${id}--iframe`"
+              :ref="`${id}--iframe`"
+              src=""
+              frameborder="0"
+            ></iframe>
+          </div>
+        </template>
+        <template v-else>
+          <div :ref="`${id}--preview`" class="preview">
+            <slot name="preview" />
+          </div>
+        </template>
       </template>
-      <template v-else>
-        <div class="preview" :ref="`${id}--preview`">
-          <slot name="preview" />
-        </div>
-      </template>
+      <div v-else>没有预览</div>
     </section>
 
     <section class="code-box-meta markdown">
@@ -29,7 +32,7 @@
         </a-tooltip>
       </div>
       <div class="code-box-description">
-        <slot name="description"></slot>
+        <slot name="description">没有描述</slot>
       </div>
       <div class="code-box-actions">
         <a-tooltip
@@ -38,9 +41,11 @@
           @visibleChange="onCopyTooltipVisibleChange"
         >
           <a-icon
-            :type="copied && copyTooltipVisible ? 'check' : 'snippets'"
+            :tabindex="-1"
+            :class="['code-box-code-copy']"
             v-clipboard:copy="sourceCode"
             v-clipboard:success="handleCodeCopied"
+            :type="copied && copyTooltipVisible ? 'check' : 'snippets'"
           ></a-icon>
         </a-tooltip>
         <a-tooltip :title="codeExpand ? 'hide' : 'show'">
@@ -70,15 +75,15 @@
     <section
       :class="['highlight-wrapper', { 'highlight-wrapper-expand': codeExpand }]"
     >
-      <div class="hightlight" :ref="`${id}--code`">
+      <div :ref="`${id}--code`" class="hightlight">
         <template v-if="highlightedCode">
           <div v-html="highlightedCode"></div>
         </template>
         <template v-else>
           <!-- <div v-html="renderedCode" class="code-box-code"></div> -->
           <div class="code-box-code">
-            <span class="lang" v-if="lang">{{ lang.toLowerCase() }}</span>
-            <pre v-html="renderedCode" :class="`language-${lang}`"></pre>
+            <span v-if="lang" class="lang">{{ lang.toLowerCase() }}</span>
+            <pre :class="`language-${lang}`" v-html="renderedCode"></pre>
           </div>
         </template>
       </div>
@@ -119,6 +124,10 @@ export default {
     highlightedCode: {
       type: String,
       default: null
+    },
+    showPreview: {
+      type: Boolean,
+      default: false
     },
     iframe: {
       type: Object,

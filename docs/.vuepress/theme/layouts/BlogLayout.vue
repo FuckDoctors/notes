@@ -120,6 +120,17 @@ export default {
   }
 };
 </script>
+
+<style>
+/*
+ 使用postcss-import后，stylus中的最后的@import无效了，代码高亮消失。
+ 报下面的错，搞了好久不知道咋解决，只好再这里再引入一次。
+node_modules/@vuepress/theme-default/styles/code.styl
+137:8   ‼  @import must precede all other statements (besides @charset) [postcss-import]
+ */
+@import 'prismjs/themes/prism-tomorrow.css';
+</style>
+
 <style lang="postcss">
 @import '../styles/config.pcss';
 

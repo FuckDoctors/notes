@@ -97,17 +97,6 @@ module.exports = {
     ],
     'reading-progress',
     [
-      'sitemap',
-      {
-        hostname: HOST_NAME,
-        dateFormatter: time => {
-          // console.log(`time: ${time}`);
-          // 没有指定lang，@vuepress/last-updated默认使用toLocaleString，此处默认new Date会失败
-          return new Date(time).toISOString();
-        }
-      }
-    ],
-    [
       'demo-code',
       {
         demoCodeMark: 'demo'
