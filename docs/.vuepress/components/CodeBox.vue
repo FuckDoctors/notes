@@ -41,7 +41,7 @@
           @visibleChange="onCopyTooltipVisibleChange"
         >
           <a-icon
-            :tabindex="-1"
+            :tabIndex="-1"
             :class="['code-box-code-copy']"
             v-clipboard:copy="sourceCode"
             v-clipboard:success="handleCodeCopied"
