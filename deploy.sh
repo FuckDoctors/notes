@@ -28,7 +28,7 @@ git commit -m "Deploying docs [ci skip] at $(TZ='Asia/Shanghai' date "+%Y-%m-%d 
 git push -f git@github.com:FuckDoctors/notes.git master:gh-pages
 
 # home repo
-git push -f git@github.com:FuckDoctors/fuckdoctors.github.io.git
+git push -f git@github.com:FuckDoctors/fuckdoctors.github.io.git master:master
 
 # coding.me
 ssh-keyscan -H coding.net >> ~/.ssh/known_hosts
