@@ -13,13 +13,13 @@ module.exports = {
     // 作为特例，默认语言可以使用 '/' 作为其路径。
     '/': {
       lang: 'zh-CN',
-      title: '我的笔记',
-      description: '记录学习的东西'
+      title: '赵斌的网站',
+      description: '赵斌的学习笔记'
     },
     '/en/': {
       lang: 'en-US', // 将会被设置为 <html> 的 lang 属性
-      title: 'My Notes',
-      description: 'Learning Notes'
+      title: "Zhao Bin's Site",
+      description: "Zhao Bin's learning Notes"
     }
   },
 
