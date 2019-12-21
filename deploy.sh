@@ -33,7 +33,7 @@ git push -f git@github.com:FuckDoctors/fuckdoctors.github.io.git master:master
 # coding.me
 ssh-keyscan -H coding.net >> ~/.ssh/known_hosts
 ssh-keyscan -H git.dev.tencent.com >> ~/.ssh/known_hosts
-git push -f git@git.dev.tencent.com:zhaobc/zhaobc.coding.me.git master:pages
+git push -f git@git.dev.tencent.com:zhaobc/zhaobc.coding.me.git master:master
 
 cd -
 rm -rf docs/.vuepress/dist
