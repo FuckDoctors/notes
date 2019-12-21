@@ -1,13 +1,11 @@
 ---
 home: true
 heroImage: /hero.png
-actionText: 走起 →
-actionLink: /notes/
 footer: Copyright © 2019.9-present zhaobc
 ---
 
-<div style="text-align: center">
-  <p>Hello VuePress!</p>
+<div style="display: flex;justify-content: center;">
+  <iframe src="/zhaobc.site/index.html" style="border:none;height:auto;width:300px;height:110px;" />
 </div>
 
 <div class="features">
@@ -17,7 +15,7 @@ footer: Copyright © 2019.9-present zhaobc
   </div>
   <div class="feature">
     <h2>博客</h2>
-    <p>技术分享，经验分享</p>
+    <p>技术笔记，经验笔记</p>
   </div>
   <div class="feature">
     <h2>其他</h2>
