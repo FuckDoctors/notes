@@ -1,5 +1,5 @@
-// const BASE = '';
-const BASE = '/notes';
+const BASE = '';
+// const BASE = '/notes';
 const HOST_NAME = 'https://fuckdoctors.github.io/notes';
 const REPO = 'FuckDoctors/notes';
 

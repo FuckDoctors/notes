@@ -5,7 +5,7 @@ footer: Copyright © 2019.9-present zhaobc
 ---
 
 <div style="display: flex;justify-content: center;">
-  <iframe src="zhaobc.site/index.html" style="border:none;height:auto;width:300px;height:110px;" />
+  <iframe src="/zhaobc.site/index.html" style="border:none;height:auto;width:300px;height:110px;" />
 </div>
 
 <div class="features">
