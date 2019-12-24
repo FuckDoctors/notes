@@ -13,7 +13,7 @@ module.exports = {
     // 作为特例，默认语言可以使用 '/' 作为其路径。
     '/': {
       lang: 'zh-CN',
-      title: '赵斌的网站',
+      title: '赵斌的小站',
       description: '赵斌的学习笔记'
     },
     '/en/': {
