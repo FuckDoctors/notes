@@ -107,3 +107,96 @@ obj; // Object {1:2, [object Object]: true}
 比如上图所示，使用`Object.create(null)`创建的对象，它的原型直接就是 null 了，所以这个对象就不会 包含任何方法。
 
 ## 4 - 3 属性操作
+
+### 属性读写
+
+使用`obj.x`或`obj['y']`形式。
+
+使用`for...in`遍历属性时，会把原型链上的东西遍历出来，并且他的顺序时不确定的。
+
+```js
+var p;
+for (p in obj) {
+  console.log(obj[p]);
+}
+```
+
+### 属性读写-异常
+
+使用`obj.x = y`时，如果 x 属性存在就赋为 y，如果不存在就新建 x 属性，并赋值。
+
+### 属性删除
+
+使用`delete obj.x`或`delete obj[x]`形式删除，删除之后 obj.x 就变为 undefined。
+
+如果去删除不存在的属性，js 不去做任何事情，但是仍然返回 true，所以，返回 true 并不代表它删除成功了，而是说这个对象上不存在这个属性了。
+
+但是，有些属性是不允许删除的，这时会返回 false，比如：
+
+```js
+delete Object.prototype; // false
+```
+
+每个属性都有自己的一些权限配置，我们可以通过下面的方式获取：
+
+```js
+var descriptor = Object.getOwnPropertyDescriptor(Object, 'prototype');
+descriptor.configurable; // false
+```
+
+除此之外，使用 var 定义的全局变量或局部变量，仍然不能被删除，虽然它不是对象的属性。比如：
+
+```js
+var globalVal = 1;
+delete globalVal; // false;
+
+(function() {
+  var localVal = 1;
+  return delete localVal;
+})(); // false
+
+// 同理，函数也一样
+function fd() {}
+delete fd; // false
+
+(function() {
+  function fd() {}
+  return delete fd;
+})(); // false
+
+// 注意，不使用var定义的这种可以删除。
+ohNo = 1;
+window.ohNo; // 1
+delete ohNo; // true
+
+// 还有中情况，eval里定义的变量是可以删除的。
+eval('var a = 1;');
+delete a; // true
+```
+
+### 属性检测
+
+可以使用 in 操作符来检测，它能访问原型链上的属性，可以用 hasOwnProperty 来检测是否是原型链上的属性。
+
+但是，使用 in 遍历时，不是每个属性都会输出，可以使用`obj.propertyIsEnumerable('x')`的形式来判断属性是否可以被枚举。
+
+我们可以使用 defineProperty 来自定义属性，并且可以设为不可枚举。
+
+```js
+Object.defineProperty(cat, 'price', { enumerable: false, value: 1000 });
+cat.propertyIsEnumerable('price'); // false
+cat.hasOwnProperty('price'); // true
+```
+
+我们使用对象字面量或者`new`创建的对象，或者赋值创建的属性，它的属性都是可读可写，也是可以枚举，也可以 delete 掉。
+
+而使用 defineProperty 创建的属性，如果不指定的话，它的标签都是 false 的，比如上面的 enumerable 不写也可以，默认 false。
+
+补充，`if (a != undefined)`，等价于`if (a !== undefined || a !== null)`，不使用严格等于时，undefined 跟 null 当成一个东西。
+
+### 属性枚举
+
+可以使用 propertyIsEnumerable 或者 hasOwnProperty 来枚举。
+注意，使用`var obj = Object.create(xxx)`创建出来的对象，它的原型指向后面的参数，比如这个 obj 的原型指向 xxx。
+
+## 4-4 get/set 方法
