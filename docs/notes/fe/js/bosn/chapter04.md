@@ -200,3 +200,84 @@ cat.hasOwnProperty('price'); // true
 注意，使用`var obj = Object.create(xxx)`创建出来的对象，它的原型指向后面的参数，比如这个 obj 的原型指向 xxx。
 
 ## 4-4 get/set 方法
+
+### getter/setter 使用
+
+Getter/Setter 的使用，是使用 get/set 关键字，加上字段名，紧接着跟着方法体。
+
+Getter/Setter 跟其他属性之间，依然使用逗号隔开。
+
+```js
+var man = {
+  name: 'Bosn',
+  weibo: '@Boson',
+  get age() {
+    return new Date().getFullYear() - 1988;
+  },
+  set age(val) {
+    console.log("Age can't be set to " + val);
+  }
+};
+
+console.log(man.age); // 27
+man.age = 100; // Age can't be set to 100
+console.log(man.age); // 27
+```
+
+一个稍微复杂的例子：
+
+```js
+var man = {
+  name: 'Bosn',
+  weibo: '@Boson',
+  $age: null, // 这里使用$，是为了不想把这个变量暴露给外面。注：实际man.$age还是可以访问的
+  get age() {
+    if (this.$age == undefined) {
+      // 这里没有使用严格等于，所以，这里实现了null和undefined判断
+      return new Date().getFullYear() - 1988;
+    } else {
+      return this.$age;
+    }
+  },
+  set age(val) {
+    val = +val; // 这里使用一元操作符+，可以将字符串转为数值。注：+不会将负值转为正值，+(-10)为-10
+    if (!isNaN(val) && val > 0 && val < 150) {
+      this.$age = +val;
+    } else {
+      throw new Error('Incorrect val = ' + val);
+    }
+  }
+};
+
+console.log(man.age); // 27
+man.age = 100;
+console.log(man.age); // 100
+man.age = 'abc'; // error: Incorrect val = NaN 注：这里是NaN，而不是'abc'，因为在val = +val中就出错了。+'abc'为NaN
+// 如果去掉val = +val，执行man.age = 'abc'时，返回：Incorrect val = abc
+man.age = -10; // error: Incorrect val = -10
+```
+
+### get/set 与原型链
+
+如图所示：
+
+![get/set与原型链](./images/4-4-get-set-prototype.png)
+
+`obj.z; // 1`
+
+右上部分，为 foo.prototype 定义了一个 z 的 get 方法，使用 obj.z，由于 obj 中没有 z，所以向上查找原型链，得到原型上的 get 方法，所以返回 1。
+
+```js
+obj.z = 10;
+obj.z; // still 1
+```
+
+给 z 赋值时，由于 obj 上没有 z，按之前的讲解，应该会在 obj 上创建一个 z 属性，但是这里是失败了，因为仍然返回 1。
+
+原因是，当 obj 上没有这个属性时，并且 obj 的原型链上有对应的 get/set 方法时，当对属性赋值时，它会走原型链上对应的 get/set 方法，而不会做对当前对象创建新属性的方式这样的处理。
+
+那么，如果实现对 obj 上这样的属性进行修改呢。我们可以通过`Object.DefineProperty`来添加新属性。
+
+如右下所示，使用`configurable: true`来指定属性可以被修改，这里没有指定 writebale 和 enumerable，所以默认是 false。
+
+## 属性标签
