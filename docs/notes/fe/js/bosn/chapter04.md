@@ -2,7 +2,7 @@
 layout: NoteLayout
 sidebar: auto
 prev: ./chapter03
-next: false
+next: ./chapter05
 meta:
   - name: description
     content: JavaScript深入浅出 对象概述
@@ -280,4 +280,102 @@ obj.z; // still 1
 
 如右下所示，使用`configurable: true`来指定属性可以被修改，这里没有指定 writebale 和 enumerable，所以默认是 false。
 
-## 属性标签
+## 4 - 5 属性标签
+
+### 查看属性标签
+
+查看一个对象上的属性有哪些属性标签使用`Object.getOwnPropertyDescriptor(obj, prop)`，如下所示：
+
+```js
+Object.getOwnPropertyDescriptor({ pro: true }, 'pro');
+// Object {value: true, writable: true, enumerable: true, configurable: true}
+// value: 属性的值
+// writable: 属性是否可修改，默认为true
+// enumerable: 属性是否可以被遍历，可被枚举(for..in或者Object.keys('xx'))，默认为true
+// configurable: 是表示这些属性标签是否可以再被修改，另外，也表示是否可以通过delete去删除这个属性，默认为true
+
+Object.getOwnPropertyDescriptor({ pro: true }, 'a'); // undefined
+// 如果去获取一个不存在的属性的属性标签，将返回undefined
+
+// 定义属性使用Object.defineProperty
+// 第一个参数为对象，
+// 第二个参数为属性名
+// 第三个参数为属性标签对象
+var person = {};
+Object.defineProperty(person, 'name', {
+  configurable: false,
+  writable: false,
+  enumerable: true,
+  value: 'Bosn Ma'
+});
+
+// 运行结果
+person.name; // Bosn Ma
+person.name = 1;
+person.name; // still Bosn Ma
+// 上面的name没有赋值成功，因为writable为false
+delete person.name; // false
+// delete也不成功，因为configurable为false
+```
+
+一次性定义多个属性时，使用`Object.defineProperties(obj, properties)`，注意这里是复数形式。
+
+第一个参数为对象，第二个参数是一个属性对象，这个对象的 key 是对象的属性，值为属性描述。
+
+```js
+Object.defineProperties(person, {
+  title: { value: 'fe', enumerable: true },
+  corp: { value: 'BABA', enumerable: true },
+  salary: { value: 50000, enumerable: true, writable: true }
+});
+
+Object.getOwnPropertyDescriptor(person, 'salary');
+// Object {value: 50000, writable: true, enumerable: true, configurable: false}
+// 使用defineProperty定义时，没有明确知道的标签，默认为false
+
+Object.getOwnPropertyDescriptor(person, 'corp');
+// Object {value: 'BABA', writable: false, enumerable: true, configurable: false}
+```
+
+属性的标签是可以重复设置的，我们可以再次使用 defineProperty 去修改对应属性的标签。
+
+不同的标签是做不同的事情的，如下所示：
+![属性标签](./images/4-5-properties.png)
+
+::: tip
+如果 configurable 为 true，即使其他标签为 false 也是可以被修改的，因为可以使用 defineProperty 再次定义为 true。
+:::
+
+## 4 - 6 对象标签，对象序列化
+
+### 对象标签：
+
+- [[proto]]
+- [[class]]
+- [[extensible]]
+
+### 原型标签**proto**
+
+![原型链](./images/4-6-proto.png)
+
+### class 标签
+
+没有直接的方式获取 class 标签，可以通过间接的方式`Object.prototype.toString`获取。
+
+```js
+var toString = Object.prototype.toString;
+function getType(o) {
+  return toString.call(o).slice(8, -1); // 从第9位截取，-1代表从后面数1位，即不包含最后一位。
+}
+
+toString(null); // [object Null]
+getType(null); // Null
+getType(undefined); // Undefined
+getType(1); // Number
+getType(new Number(1)); // Number
+typeof new Number(1); // object
+getType(true); // Boolean
+getType(new Boolean(true)); // Boolean
+```
+
+### extensible 标签
