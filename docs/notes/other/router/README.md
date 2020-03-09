@@ -101,3 +101,23 @@ token = 跟客户端的token保持一致
    - Server Private Key (required)
 
 不出意外，就可以外网访问了，如有意外，先检查配置，再网络搜索。
+
+## 开启 IPv6 外网访问
+
+运营上已支持 IPv6，路由里也自动获得了 IPv6。
+
+1. 默认配置：
+   ![IPv6配置](./images/ipv6-settings.png)
+2. Aliddns 的`顶级域名3[IPv6]`配置上，会自动加上 AAAA 记录。
+3. `自定义设置 - 脚本 - 在防火墙规则启动后执行:`里加上 IPv6 的防火墙策略
+
+```bash
+### 所需要的防火墙策略
+ip6tables -F
+ip6tables -P INPUT ACCEPT
+ip6tables -P FORWARD ACCEPT
+ip6tables -P OUTPUT ACCEPT
+```
+
+4. 在 frp 里配置上 IPv6 的节点。
+   跟 IPv4 一样，需要注意的是，http/https 可以共用同一个端口，tcp 不能共用同一个端口，需要单独起一个端口供 IPv6 使用，同时端口转发里也加上这个端口。
