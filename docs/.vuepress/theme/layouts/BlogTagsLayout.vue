@@ -12,7 +12,7 @@ export default {
   name: 'BlogTagsLayout',
   components: {
     BlogLayout,
-    BlogTags
-  }
+    BlogTags,
+  },
 };
 </script>

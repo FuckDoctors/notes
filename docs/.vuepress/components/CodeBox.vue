@@ -55,7 +55,7 @@
               src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg"
               :class="[
                 'no-zoom',
-                codeExpand ? 'code-expand-icon-hide' : 'code-expand-icon-show'
+                codeExpand ? 'code-expand-icon-hide' : 'code-expand-icon-show',
               ]"
               @click="handleCodeExpand"
             />
@@ -64,7 +64,7 @@
               src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg"
               :class="[
                 'no-zoom',
-                codeExpand ? 'code-expand-icon-show' : 'code-expand-icon-hide'
+                codeExpand ? 'code-expand-icon-show' : 'code-expand-icon-hide',
               ]"
               @click="handleCodeExpand"
             />
@@ -100,50 +100,50 @@ export default {
   name: 'CodeBox',
   components: {
     ATooltip,
-    AIcon: Icon
+    AIcon: Icon,
   },
   props: {
     id: {
       type: String,
-      required: true
+      required: true,
     },
     title: {
       type: String,
-      default: ''
+      default: '',
     },
     lang: {
       type: String,
-      default: 'vue'
+      default: 'vue',
     },
     code: {
       type: String,
       default() {
         return null;
-      }
+      },
     },
     highlightedCode: {
       type: String,
-      default: null
+      default: null,
     },
     showPreview: {
       type: Boolean,
-      default: false
+      default: false,
     },
     iframe: {
       type: Object,
-      default: () => null
+      default: () => null,
     },
     debug: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
       sourceCode: 'test',
       codeExpand: false,
       copied: false,
-      copyTooltipVisible: false
+      copyTooltipVisible: false,
     };
   },
   mounted() {
@@ -157,7 +157,7 @@ export default {
       }
 
       return '';
-    }
+    },
   },
   methods: {
     handleCodeExpand() {
@@ -207,8 +207,8 @@ export default {
     },
     renderIframe() {
       // iframe处理
-    }
-  }
+    },
+  },
 };
 </script>
 

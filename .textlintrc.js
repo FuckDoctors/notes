@@ -13,10 +13,10 @@ module.exports = {
       // allow lower-case words in ListItem
       allowLists: true,
       // allow lower-case words in anywhere
-      allowWords: []
+      allowWords: [],
     },
     'stop-words': {
-      severity: 'warning'
+      severity: 'warning',
     },
     terminology: {
       severity: 'warning',
@@ -25,10 +25,10 @@ module.exports = {
       // Syntax elements to skip. Overrides the default
       skip: ['Blockquote'],
       // List of terms
-      terms: `${__dirname}/.textlint.terms.json`
+      terms: `${__dirname}/.textlint.terms.json`,
     },
     'write-good': {
-      severity: 'warning'
+      severity: 'warning',
     },
     'no-dead-link': {
       severity: 'warning',
@@ -37,10 +37,10 @@ module.exports = {
       ignore: [],
       preferGET: [],
       ignoreRedirects: false,
-      retry: 3
-    }
+      retry: 3,
+    },
   },
   filters: {
-    comments: true
-  }
+    comments: true,
+  },
 };

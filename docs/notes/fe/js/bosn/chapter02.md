@@ -41,9 +41,9 @@ tag:
 比如：
 
 ```js
-var f = function() {};
+var f = function () {};
 
-(function() {
+(function () {
   console.log('Hello World!');
 })();
 ```
@@ -114,7 +114,7 @@ obj.x; // undefined
 var obj = {};
 Object.defineProperty(obj, 'x', {
   configurable: false,
-  value: 1
+  value: 1,
 });
 delete obj.x; // false
 obj.x; // 1
@@ -164,9 +164,9 @@ obj.__proto__.hasOwnProperty('x'); // true
 ```js
 this; // window（浏览器）
 var obj = {
-  func: function() {
+  func: function () {
     return this;
-  }
+  },
 };
 obj.func(); // obj
 ```

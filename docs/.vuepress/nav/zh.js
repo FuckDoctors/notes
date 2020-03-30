@@ -1,11 +1,11 @@
 module.exports = [
   {
     text: '学习笔记',
-    link: '/notes/'
+    link: '/notes/',
   },
   {
     text: '博客',
-    link: '/blog/'
+    link: '/blog/',
   },
   {
     text: '标签',
@@ -16,60 +16,60 @@ module.exports = [
         items: [
           {
             text: 'HTML',
-            link: '/tag/html/'
+            link: '/tag/html/',
           },
           {
             text: 'JavaScript',
-            link: '/tag/js/'
+            link: '/tag/js/',
           },
           {
             text: 'CSS',
-            link: '/tag/css/'
+            link: '/tag/css/',
           },
           {
             text: 'TypeScript',
-            link: '/tag/ts/'
+            link: '/tag/ts/',
           },
           {
             text: 'Vue',
-            link: '/tag/vue/'
-          }
-        ]
+            link: '/tag/vue/',
+          },
+        ],
       },
       {
         text: '后端',
         items: [
           {
             text: 'Java',
-            link: '/tag/java/'
+            link: '/tag/java/',
           },
           {
             text: '.Net',
-            link: '/tag/.net/'
+            link: '/tag/.net/',
           },
           {
             text: 'Spring',
-            link: '/tag/spring/'
-          }
-        ]
+            link: '/tag/spring/',
+          },
+        ],
       },
       {
         text: '其他',
         items: [
           {
             text: '术语',
-            link: '/miscellaneous/glossary/'
+            link: '/miscellaneous/glossary/',
           },
           {
             text: '全部标签',
-            link: '/tag/'
-          }
-        ]
-      }
-    ]
+            link: '/tag/',
+          },
+        ],
+      },
+    ],
   },
   {
     text: '关于我',
-    link: '/about/'
-  }
+    link: '/about/',
+  },
 ];

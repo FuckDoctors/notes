@@ -50,3 +50,8 @@ meta:
   - 待定
 - SpringBoot
   - 待定
+
+## [其他](other/)
+
+- 路由器
+  - [newifi3 & padavan](other/router/)

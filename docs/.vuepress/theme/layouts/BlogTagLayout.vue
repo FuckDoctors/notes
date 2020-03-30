@@ -20,7 +20,7 @@ import BlogLayout from './BlogLayout';
 export default {
   name: 'BlogTagLayout',
   components: {
-    BlogLayout
-  }
+    BlogLayout,
+  },
 };
 </script>

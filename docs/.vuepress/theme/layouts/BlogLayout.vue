@@ -64,12 +64,12 @@ export default {
   components: {
     Navbar,
     NavLinks,
-    BlogFooter
+    BlogFooter,
   },
 
   data() {
     return {
-      isSidebarOpen: false
+      isSidebarOpen: false,
     };
   },
 
@@ -78,11 +78,11 @@ export default {
       const userPageClass = this.$page.frontmatter.pageClass;
       return [
         {
-          'sidebar-open': this.isSidebarOpen
+          'sidebar-open': this.isSidebarOpen,
         },
-        userPageClass
+        userPageClass,
       ];
-    }
+    },
   },
 
   mounted() {
@@ -102,7 +102,7 @@ export default {
     onTouchStart(e) {
       this.touchStart = {
         x: e.changedTouches[0].clientX,
-        y: e.changedTouches[0].clientY
+        y: e.changedTouches[0].clientY,
       };
     },
 
@@ -116,8 +116,8 @@ export default {
           this.toggleSidebar(false);
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

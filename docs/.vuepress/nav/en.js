@@ -1,11 +1,11 @@
 module.exports = [
   {
     text: 'Notes',
-    link: '/en/notes/'
+    link: '/en/notes/',
   },
   {
     text: 'Blogs',
-    link: '/en/blog/'
+    link: '/en/blog/',
   },
   {
     text: 'Tags',
@@ -16,60 +16,60 @@ module.exports = [
         items: [
           {
             text: 'HTML',
-            link: '/en/tag/html/'
+            link: '/en/tag/html/',
           },
           {
             text: 'JavaScript',
-            link: '/en/tag/js/'
+            link: '/en/tag/js/',
           },
           {
             text: 'CSS',
-            link: '/en/tag/css/'
+            link: '/en/tag/css/',
           },
           {
             text: 'TypeScript',
-            link: '/en/tag/ts/'
+            link: '/en/tag/ts/',
           },
           {
             text: 'Vue',
-            link: '/en/tag/vue/'
-          }
-        ]
+            link: '/en/tag/vue/',
+          },
+        ],
       },
       {
         text: 'Back-End',
         items: [
           {
             text: 'Java',
-            link: '/en/tag/java/'
+            link: '/en/tag/java/',
           },
           {
             text: '.Net',
-            link: '/en/tag/.net/'
+            link: '/en/tag/.net/',
           },
           {
             text: 'Spring',
-            link: '/en/tag/spring/'
-          }
-        ]
+            link: '/en/tag/spring/',
+          },
+        ],
       },
       {
         text: 'Other',
         items: [
           {
             text: 'Glossary',
-            link: '/en/miscellaneous/glossary/'
+            link: '/en/miscellaneous/glossary/',
           },
           {
             text: 'All Tags',
-            link: '/en/tag/'
-          }
-        ]
-      }
-    ]
+            link: '/en/tag/',
+          },
+        ],
+      },
+    ],
   },
   {
     text: 'About Me',
-    link: '/en/about/'
-  }
+    link: '/en/about/',
+  },
 ];

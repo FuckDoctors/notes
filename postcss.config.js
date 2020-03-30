@@ -14,23 +14,23 @@ module.exports = {
       plugins: [
         require('stylelint')({
           /* options */
-        })
-      ]
+        }),
+      ],
     }),
     require('postcss-mixins'),
     require('postcss-simple-vars'),
     require('postcss-nested'),
     require('postcss-calc'),
     require('postcss-cssnext')({
-      browsers: 'last 2 versions'
+      browsers: 'last 2 versions',
     }),
     require('postcss-custom-media'),
     require('postcss-custom-selectors'),
     require('cssnano')({
-      preset: 'default'
+      preset: 'default',
     }),
     require('postcss-reporter')({
-      clearReportedMessages: true
-    })
-  ]
+      clearReportedMessages: true,
+    }),
+  ],
 };

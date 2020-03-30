@@ -24,7 +24,7 @@ module.exports = {
             frontmatter: { title: 'Blog' },
             itemPermalink: '/blog/:year/:month/:day/:slug',
             layout: 'BlogLayout',
-            itemLayout: 'PostLayout'
+            itemLayout: 'PostLayout',
           },
           {
             // Unique ID of current classification
@@ -36,8 +36,8 @@ module.exports = {
             // 多语言支持，此处itemPermalink不能再加语言前缀，不然会出两次，比如：/en/en/blog/xxx
             itemPermalink: '/blog/:year/:month/:day/:slug',
             layout: 'BlogLayout',
-            itemLayout: 'PostLayout'
-          }
+            itemLayout: 'PostLayout',
+          },
         ],
         frontmatters: [
           {
@@ -50,7 +50,7 @@ module.exports = {
             frontmatter: { title: 'Tag' },
             layout: 'BlogTagsLayout',
             // Layout of the `scope page`
-            scopeLayout: 'BlogTagLayout'
+            scopeLayout: 'BlogTagLayout',
           },
           {
             // Unique ID of current classification
@@ -62,15 +62,15 @@ module.exports = {
             frontmatter: { title: 'Tag' },
             layout: 'BlogTagsLayout',
             // Layout of the `scope page`
-            scopeLayout: 'BlogTagLayout'
-          }
-        ]
-      }
-    ]
+            scopeLayout: 'BlogTagLayout',
+          },
+        ],
+      },
+    ],
   ],
   less: {
     // https://github.com/ant-design/ant-motion/issues/44#issuecomment-407498459
-    javascriptEnabled: true
+    javascriptEnabled: true,
   },
   // 这种方式报错，改用chainWebpack方式
   // configureWebpack: {
@@ -92,7 +92,7 @@ module.exports = {
       .use(NormalModuleReplacementPlugin, [
         // 兼容window路径
         /node_modules[\\\/]ant-design-vue[\\\/]es[\\\/]style[\\\/]index\.less/,
-        path.resolve(__dirname, './styles/antd.hack.less')
+        path.resolve(__dirname, './styles/antd.hack.less'),
       ]);
 
     // 使用less错误，加上上面的less-loader options也不行，这里再配置一遍
@@ -102,21 +102,21 @@ module.exports = {
       .test(/\.less$/)
       .oneOf('normal')
       .use('less-loader')
-      .tap(options => ({
+      .tap((options) => ({
         ...options,
         // modifyVars: {
         //   ...require('./styles/antd.hack')
         // },
-        javascriptEnabled: true
+        javascriptEnabled: true,
       }));
     config.module
       .rule('less')
       .test(/\.less$/)
       .oneOf('modules')
       .use('less-loader')
-      .tap(options => ({
+      .tap((options) => ({
         ...options,
-        javascriptEnabled: true
+        javascriptEnabled: true,
       }));
 
     // 下面这个不加貌似也可以了，官网号称的已经实现按需加载
@@ -124,7 +124,7 @@ module.exports = {
     config.module
       .rule('js')
       .use('babel-loader')
-      .tap(options => ({
+      .tap((options) => ({
         ...options,
         plugins: [
           [
@@ -132,10 +132,10 @@ module.exports = {
             {
               libraryName: 'ant-design-vue',
               libraryDirectory: 'es',
-              style: true
-            }
-          ] // `style: true` 会加载 less 文件
-        ]
+              style: true,
+            },
+          ], // `style: true` 会加载 less 文件
+        ],
       }));
-  }
+  },
 };

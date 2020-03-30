@@ -22,18 +22,18 @@ function initTitleAnimation() {
     'show 0.3s linear 2.2s 1 forwards';
 
   // 恢复A developer's site
-  setTimeout(function() {
+  setTimeout(function () {
     // document.querySelectorAll('.zhaobc-site').forEach(function() {
     // 	this.style.animation = 'bounceIn 1s';
     // });
     /* eslint-disable-next-line no-var */
     var items = document.querySelectorAll('.zhaobc-site');
-    [].forEach.call(items, function(item) {
+    [].forEach.call(items, function (item) {
       item.style.animation = 'bounceIn 1s';
     });
   }, 2200);
 }
 
-document.body.onload = function() {
+document.body.onload = function () {
   setTimeout(initTitleAnimation(), 1000);
 };

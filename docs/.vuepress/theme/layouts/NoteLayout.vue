@@ -16,7 +16,7 @@ export default {
   name: 'NoteLayout',
   components: {
     ParentLayout,
-    Breadcrumb
-  }
+    Breadcrumb,
+  },
 };
 </script>

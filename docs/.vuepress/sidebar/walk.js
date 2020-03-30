@@ -1,9 +1,9 @@
 const fs = require('fs');
 
-const walk = function(dir) {
+const walk = function (dir) {
   let results = [];
   const list = fs.readdirSync(dir);
-  list.forEach(function(file) {
+  list.forEach(function (file) {
     file = dir + '/' + file;
     const stat = fs.statSync(file);
     if (stat && stat.isDirectory()) results = results.concat(walk(file));

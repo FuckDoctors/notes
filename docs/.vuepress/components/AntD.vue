@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'ant-d'
+  name: 'ant-d',
 };
 </script>
