@@ -12,10 +12,6 @@ module.exports = {
     node: true,
     browser: true,
   },
-  env: {
-    node: true,
-    browser: true,
-  },
   extends: [
     // add more generic rulesets here, such as:
     // 'eslint:recommended',
