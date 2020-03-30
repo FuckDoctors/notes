@@ -24,27 +24,27 @@ Display system-wide information
 
 Return low-level information on Docker objects
 
-``` bash
+```bash
 docker inspect [OPTIONS] NAME|ID [NAME|ID...]
 ```
 
 ## docker ps
 
-查看运行的docker 容器
+查看运行的 docker 容器
 
 ## docker images
 
-查看docker镜像
+查看 docker 镜像
 
 ## docker rm
 
 Remove one or more containers
 
-``` bash
+```bash
 docker rm [OPTIONS] CONTAINER [CONTAINER...]
 ```
 
-``` bash
+```bash
 # 删除所有已经停止的容器
 docker rm $(docker ps -a -q)
 ```
@@ -53,7 +53,7 @@ docker rm $(docker ps -a -q)
 
 Remove one or more images
 
-``` bash
+```bash
 docker rmi [OPTIONS] IMAGE [IMAGE...]
 ```
 
@@ -61,7 +61,7 @@ docker rmi [OPTIONS] IMAGE [IMAGE...]
 
 Start one or more stopped containers
 
-``` bash
+```bash
 docker start [OPTIONS] CONTAINER [CONTAINER...]
 ```
 
@@ -69,7 +69,7 @@ docker start [OPTIONS] CONTAINER [CONTAINER...]
 
 Stop one or more running containers
 
-``` bash
+```bash
 docker stop [OPTIONS] CONTAINER [CONTAINER...]
 ```
 
@@ -77,7 +77,7 @@ docker stop [OPTIONS] CONTAINER [CONTAINER...]
 
 Restart one or more containers
 
-``` bash
+```bash
 docker restart [OPTIONS] CONTAINER [CONTAINER...]
 ```
 
@@ -85,7 +85,7 @@ docker restart [OPTIONS] CONTAINER [CONTAINER...]
 
 List port mappings or a specific mapping for the container
 
-``` bash
+```bash
 docker port CONTAINER [PRIVATE_PORT[/PROTO]]
 ```
 
@@ -93,7 +93,7 @@ docker port CONTAINER [PRIVATE_PORT[/PROTO]]
 
 Run a command in a new container
 
-``` bash
+```bash
 docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 ```
 
@@ -101,21 +101,21 @@ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 
 Run a command in a running container
 
-``` bash
+```bash
 docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 ```
 
-进入docker容器
+进入 docker 容器
 
-``` bash
+```bash
 docker exec -it container_name /bin/bash
 
 docker exec -it ubuntu_bash bash
 ```
 
-执行docker容器里的命令
+执行 docker 容器里的命令
 
-``` bash
+```bash
 docker exec -ti my_container sh -c "echo a && echo b"
 # 解压文件
 docker exec -it container_name tar -vxf a.tar
@@ -128,7 +128,7 @@ docker exec -u root <container> <command>
 
 Copy files/folders between a container and the local filesystem
 
-``` bash
+```bash
 docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-
 docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
 ```
@@ -137,7 +137,7 @@ docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
 
 Create a new image from a container’s changes
 
-``` bash
+```bash
 docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
 ```
 
@@ -145,6 +145,6 @@ docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
 
 Build an image from a Dockerfile
 
-``` bash
+```bash
 docker build [OPTIONS] PATH | URL | -
 ```
