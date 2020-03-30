@@ -12,7 +12,7 @@ import BlogLayout from './BlogLayout';
 export default {
   name: 'PostLayout',
   components: {
-    BlogLayout
-  }
+    BlogLayout,
+  },
 };
 </script>

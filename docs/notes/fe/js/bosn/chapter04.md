@@ -150,7 +150,7 @@ descriptor.configurable; // false
 var globalVal = 1;
 delete globalVal; // false;
 
-(function() {
+(function () {
   var localVal = 1;
   return delete localVal;
 })(); // false
@@ -159,7 +159,7 @@ delete globalVal; // false;
 function fd() {}
 delete fd; // false
 
-(function() {
+(function () {
   function fd() {}
   return delete fd;
 })(); // false
@@ -216,7 +216,7 @@ var man = {
   },
   set age(val) {
     console.log("Age can't be set to " + val);
-  }
+  },
 };
 
 console.log(man.age); // 27
@@ -246,7 +246,7 @@ var man = {
     } else {
       throw new Error('Incorrect val = ' + val);
     }
-  }
+  },
 };
 
 console.log(man.age); // 27
@@ -306,7 +306,7 @@ Object.defineProperty(person, 'name', {
   configurable: false,
   writable: false,
   enumerable: true,
-  value: 'Bosn Ma'
+  value: 'Bosn Ma',
 });
 
 // 运行结果
@@ -326,7 +326,7 @@ delete person.name; // false
 Object.defineProperties(person, {
   title: { value: 'fe', enumerable: true },
   corp: { value: 'BABA', enumerable: true },
-  salary: { value: 50000, enumerable: true, writable: true }
+  salary: { value: 50000, enumerable: true, writable: true },
 });
 
 Object.getOwnPropertyDescriptor(person, 'salary');

@@ -6,11 +6,11 @@ module.exports = {
   parserOptions: {
     parser: '@typescript-eslint/parser',
     extraFileExtensions: ['.vue'],
-    project: './tsconfig.json'
+    project: './tsconfig.json',
   },
   env: {
     node: true,
-    browser: true
+    browser: true,
   },
   extends: [
     // add more generic rulesets here, such as:
@@ -20,17 +20,17 @@ module.exports = {
     'plugin:vue/recommended',
     'prettier',
     'prettier/@typescript-eslint',
-    'prettier/vue'
+    'prettier/vue',
   ],
   plugins: [
     // 配合上面的extends
     '@typescript-eslint',
     'prettier',
-    'vue'
+    'vue',
   ],
   rules: {
     // override/add rules settings here, such as:
     // 'vue/no-unused-vars': 'error'
-    '@typescript-eslint/no-var-requires': 'warn'
-  }
+    '@typescript-eslint/no-var-requires': 'warn',
+  },
 };

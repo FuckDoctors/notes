@@ -102,7 +102,7 @@ function fd() {
 函数表达式：
 
 ```js
-var fe = function() {
+var fe = function () {
   // do sth.
 };
 ```
@@ -213,7 +213,7 @@ function func() {}
 ### 不允许未声明的变量被赋值
 
 ```js
-!(function() {
+!(function () {
   'use strict';
   x = 1;
   console.log(window.x);
@@ -227,7 +227,7 @@ function func() {}
 ### arguments 变为参数的静态副本
 
 ```js
-!(function(a) {
+!(function (a) {
   arguments[0] = 100;
   console.log(a);
 })(1);
@@ -243,13 +243,13 @@ function func() {}
 ### delete 参数、函数名报错
 
 ```js
-!(function(a) {
+!(function (a) {
   console.log(delete a);
 })(1);
 
 // false
 
-!(function(a) {
+!(function (a) {
   'use strict';
   delete a;
 })(a);
@@ -260,7 +260,7 @@ function func() {}
 ### delete 不可配置的报错
 
 ```js
-!(function(a) {
+!(function (a) {
   var obj = {};
   Object.defineProperty(obj, 'a', { configurable: false });
   console.log(delete obj.a);
@@ -268,7 +268,7 @@ function func() {}
 
 // false
 
-!(function(a) {
+!(function (a) {
   'use strict';
   var obj = {};
   Object.defineProperty(obj, 'a', { configurable: false });
@@ -281,14 +281,14 @@ function func() {}
 ### 对象字面量重复属性名报错
 
 ```js
-!(function() {
+!(function () {
   var obj = { x: 1, x: 2 };
   console.log(obj.x);
 })();
 
 // 2
 
-!(function() {
+!(function () {
   'use strict';
   var obj = { x: 1, x: 2 };
   console.log(obj.x);
@@ -300,13 +300,13 @@ function func() {}
 ### 禁止八进制字面量
 
 ```js
-!(function() {
+!(function () {
   console.log(0123);
 })();
 
 // 83
 
-!(function() {
+!(function () {
   'use strict';
   console.log(0123);
 })();
@@ -317,14 +317,14 @@ function func() {}
 ### eval, arguments 变为关键字，不能作为变量、函数名
 
 ```js
-!(function() {
+!(function () {
   function eval() {}
   console.log(eval);
 })();
 
 // function eval() {}
 
-!(function() {
+!(function () {
   'use strict';
   function eval() {}
   console.log(eval);
@@ -336,14 +336,14 @@ function func() {}
 ### eval 独立作用域
 
 ```js
-!(function() {
+!(function () {
   eval('var evalVal = 2;');
   console.log(typeof evalVal);
 })();
 
 // number
 
-!(function() {
+!(function () {
   'use strict';
   eval('var evalVal = 2;');
   console.log(typeof evalVal);

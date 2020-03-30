@@ -8,7 +8,7 @@ import Demo from './demo/Demo.vue';
 export default {
   name: 'CodeDemo',
   components: {
-    Demo
-  }
+    Demo,
+  },
 };
 </script>

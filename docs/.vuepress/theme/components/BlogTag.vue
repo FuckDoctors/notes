@@ -9,6 +9,6 @@
 <script>
 export default {
   name: 'BlogTag',
-  props: ['tag']
+  props: ['tag'],
 };
 </script>

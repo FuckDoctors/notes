@@ -7,6 +7,7 @@
     <span
       class="breadcrumb-item"
       v-for="(breadcrumb, index) in breadcrumbLinks"
+      :key="index"
     >
       <a
         v-if="breadcrumb.link && breadcrumb.link.length > 0"
@@ -26,7 +27,7 @@
 export default {
   name: 'Breadcrumb',
   props: {
-    links: Array
+    links: Array,
   },
   computed: {
     breadcrumbLinks() {
@@ -34,20 +35,20 @@ export default {
         return this.links;
       }
 
-      var links = [];
+      const links = [];
       const paths = this.$page.regularPath.split('/');
       const levels = paths.length - 1;
       for (let index = levels; index > 1; index--) {
         links.push(paths.slice(0, index).join('/') + '/');
       }
 
-      var breadcrumbs = [];
+      const breadcrumbs = [];
 
-      links.reverse().forEach(link => {
+      links.reverse().forEach((link) => {
         breadcrumbs.push({
           // title: this.getSidebarItems(link)[0].title,
           title: this.getPageTitle(link),
-          link: link
+          link: link,
         });
       });
 
@@ -57,20 +58,20 @@ export default {
         breadcrumbs.pop();
       }
       breadcrumbs.push({
-        title: this.$page.title
+        title: this.$page.title,
       });
 
       // console.log(breadcrumbs);
       return breadcrumbs;
-    }
+    },
   },
   methods: {
     getPageTitle(regularPath) {
       const { pages } = this.$site;
-      const page = pages.filter(p => p.regularPath === regularPath)[0];
+      const page = pages.filter((p) => p.regularPath === regularPath)[0];
       return page.title;
-    }
-  }
+    },
+  },
 };
 </script>
 

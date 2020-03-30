@@ -10,8 +10,8 @@ import BlogTag from '@theme/components/BlogTag';
 export default {
   name: 'BlogTags',
   components: {
-    BlogTag
+    BlogTag,
   },
-  props: ['tags']
+  props: ['tags'],
 };
 </script>

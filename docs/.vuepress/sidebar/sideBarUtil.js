@@ -13,18 +13,18 @@ function inferSideBars(sideBarMap) {
     const children = fs
       .readdirSync(dirPath)
       .filter(
-        item =>
+        (item) =>
           item.endsWith('.md') && fs.statSync(path.join(dirPath, item)).isFile()
       )
       .sort((prev, next) => (next.includes('README.md') ? 1 : 0))
-      .map(item => item.replace(/(README)?(.md)$/, ''));
+      .map((item) => item.replace(/(README)?(.md)$/, ''));
 
     sidebar[parent] = [
       {
         title,
         children,
-        collapsable: false
-      }
+        collapsable: false,
+      },
     ];
   });
 

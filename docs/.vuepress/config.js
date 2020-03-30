@@ -14,13 +14,13 @@ module.exports = {
     '/': {
       lang: 'zh-CN',
       title: '赵斌的小站',
-      description: '赵斌的学习笔记'
+      description: '赵斌的学习笔记',
     },
     '/en/': {
       lang: 'en-US', // 将会被设置为 <html> 的 lang 属性
       title: "Zhao Bin's Site",
-      description: "Zhao Bin's learning Notes"
-    }
+      description: "Zhao Bin's learning Notes",
+    },
   },
 
   head: [
@@ -30,28 +30,28 @@ module.exports = {
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     [
       'meta',
-      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }
+      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
     ],
     [
       'link',
-      { rel: 'apple-touch-icon', href: `/icons/apple-touch-icon-152x152.png` }
+      { rel: 'apple-touch-icon', href: `/icons/apple-touch-icon-152x152.png` },
     ],
     [
       'link',
       {
         rel: 'mask-icon',
         href: '/icons/safari-pinned-tab.svg',
-        color: '#3eaf7c'
-      }
+        color: '#3eaf7c',
+      },
     ],
     [
       'meta',
       {
         name: 'msapplication-TileImage',
-        content: '/icons/msapplication-icon-144x144.png'
-      }
+        content: '/icons/msapplication-icon-144x144.png',
+      },
     ],
-    ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
+    ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
   ],
 
   plugins: [
@@ -64,16 +64,16 @@ module.exports = {
           // console.log(`timestamp: ${timestamp}, lang: ${lang}`);
           // 为了暂时兼容vuepress-plugin-sitemap，固定统一格式
           return dayjs(timestamp).format('YYYY/MM/DD HH:mm:ss');
-        }
-      }
+        },
+      },
     ],
     '@vuepress/nprogress',
     [
       '@vuepress/pwa',
       {
         serviceWorker: true,
-        updatePopup: true
-      }
+        updatePopup: true,
+      },
     ],
     '@vuepress/back-to-top',
     [
@@ -81,28 +81,28 @@ module.exports = {
       {
         // 默认值
         // selector: '.theme-default-content :not(a) > img'
-        selector: 'img:not(.no-zoom)'
-      }
+        selector: 'img:not(.no-zoom)',
+      },
     ],
     [
       'sitemap',
       {
         hostname: HOST_NAME,
-        dateFormatter: time => {
+        dateFormatter: (time) => {
           // console.log(`time: ${time}`);
           // 没有指定lang，@vuepress/last-updated默认使用toLocaleString，此处默认new Date会失败
           return new Date(time).toISOString();
-        }
-      }
+        },
+      },
     ],
     'reading-progress',
     [
       'demo-code',
       {
-        demoCodeMark: 'demo'
-      }
+        demoCodeMark: 'demo',
+      },
     ],
-    'vuepress-plugin-smooth-scroll'
+    'vuepress-plugin-smooth-scroll',
   ],
 
   theme: '@theme',
@@ -121,7 +121,7 @@ module.exports = {
         lastUpdated: '上次更新',
         nav: require('./nav/zh'),
         // sidebar: require('./sidebar/zh')
-        sidebar: sideBarUtil.inferSideBars(sideBarMap.zh)
+        sidebar: sideBarUtil.inferSideBars(sideBarMap.zh),
       },
       '/en/': {
         label: 'English',
@@ -130,14 +130,14 @@ module.exports = {
         lastUpdated: 'Last Updated',
         nav: require('./nav/en'),
         // sidebar: require('./sidebar/en')
-        sidebar: sideBarUtil.inferSideBars(sideBarMap.en)
-      }
-    }
+        sidebar: sideBarUtil.inferSideBars(sideBarMap.en),
+      },
+    },
   },
 
   markdown: {
-    lineNumbers: true
+    lineNumbers: true,
   },
 
-  postcss: require('../../postcss.config')
+  postcss: require('../../postcss.config'),
 };
