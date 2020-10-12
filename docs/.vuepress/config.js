@@ -80,8 +80,9 @@ module.exports = {
       '@vuepress/medium-zoom',
       {
         // 默认值
-        selector: '.theme-default-content :not(a) > img',
-        // selector: 'img:not(.no-zoom)',
+        // selector: '.theme-default-content :not(a) > img'
+        // selector: 'img:not(.no-zoom)'
+        selector: ':not(.no-zoom) > img',
       },
     ],
     [
