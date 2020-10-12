@@ -34,7 +34,6 @@ Hello World!
 <!-- prettier-ignore-start -->
 ::: slot blog-right
 <blog-account
-  style="width: 300px;"
   nickname="Zhao Bin"
   avatar="/account/avatar/avatar2.jpg"
   bio="个人简介"

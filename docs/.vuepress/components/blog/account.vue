@@ -46,7 +46,11 @@
             <div class="team-title">团队</div>
             <div class="teams">
               <a-row>
-                <a-col v-for="(team, index) in teams" :key="index" :span="12">
+                <a-col
+                  class="team-info"
+                  v-for="(team, index) in teams"
+                  :key="index"
+                >
                   <a v-if="team.link" :href="team.link">
                     <a-avatar
                       v-if="team.avatar"
@@ -170,10 +174,12 @@ export default {
 
 <style lang="less" scoped>
 .account-wrapper {
-  width: 100%;
+  // width: 100%;
+  width: 260px;
   height: 100%;
   min-height: 100%;
   transition: 0.3s;
+  overflow: hidden;
 }
 .account {
   .account-avatar-holder {
@@ -237,6 +243,17 @@ export default {
 
   .team-container {
     .teams {
+      // 写这里不起作用
+      // .ant-row {
+      //   .ant-col {
+      //     line-height: 3;
+      //   }
+      // }
+
+      // .team-info {
+      //   line-height: 3;
+      // }
+
       a {
         display: block;
         margin: 12px 0;
@@ -248,7 +265,7 @@ export default {
           color: rgba(0, 0, 0, 0.65);
           line-height: 24px;
           max-width: 100px;
-          vertical-align: top;
+          vertical-align: middle;
           margin-left: 12px;
           transition: all 0.3s;
           display: inline-block;
@@ -286,6 +303,15 @@ export default {
     font-weight: 500;
     color: rgba(0, 0, 0, 0.85);
     margin-bottom: 12px;
+  }
+}
+.team-info.ant-col {
+  line-height: 2;
+}
+@media (max-width: 719px) {
+  .account-wrapper {
+    width: 0;
+    height: 0;
   }
 }
 </style>

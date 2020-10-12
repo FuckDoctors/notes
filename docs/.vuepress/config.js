@@ -82,6 +82,7 @@ module.exports = {
         // 默认值
         // selector: '.theme-default-content :not(a) > img'
         // selector: 'img:not(.no-zoom)'
+        // https://developer.mozilla.org/zh-CN/docs/Web/CSS/:not
         selector: ':not(.no-zoom) > img',
       },
     ],
