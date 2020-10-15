@@ -95,6 +95,20 @@ module.exports = {
         path.resolve(__dirname, './styles/antd.hack.less'),
       ]);
 
+    // // 使用jquery
+    // // https://blog.csdn.net/solocao/article/details/84347533
+    // // https://www.jianshu.com/p/8118f7f5298e
+    // // https://www.jianshu.com/p/0d0c1eaeb877
+    // const ProvidePlugin = require('webpack').ProvidePlugin;
+    // config
+    //   .plugin('provide')
+    //   .use(ProvidePlugin, [{
+    //     $: 'jquery',
+    //     jquery: 'jquery',
+    //     jQuery: 'jquery',
+    //     'window.jQuery': 'jquery'
+    //   }]);
+
     // 使用less错误，加上上面的less-loader options也不行，这里再配置一遍
     // https://github.com/vuejs/vuepress/issues/1871
     config.module

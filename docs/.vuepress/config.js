@@ -52,6 +52,20 @@ module.exports = {
       },
     ],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
+    // live2d
+    ['script', { src: `/live2d/assets/live2d.min.js?v=1.0.5` }],
+    ['script', { src: `/live2d/assets/waifu-tips.min.js?v=1.4.2` }],
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: `/live2d/assets/waifu.min.css?v=1.4.2`,
+      },
+    ],
+    ['script', { src: `/live2d/assets/jquery.min.js?v=3.3.1` }],
+    ['script', { src: `/live2d/assets/jquery-ui.min.js?v=1.12.1` }],
+    ['script', { src: `/live2d/assets/autoload.js?v=1.4.2` }],
   ],
 
   plugins: [
