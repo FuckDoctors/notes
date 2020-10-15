@@ -35,5 +35,9 @@ ssh-keyscan -H coding.net >> ~/.ssh/known_hosts
 ssh-keyscan -H git.dev.tencent.com >> ~/.ssh/known_hosts
 git push -f git@git.dev.tencent.com:zhaobc/zhaobc.coding.me.git master:master
 
+# e.coding.net
+ssh-keyscan -H e.coding.net >> ~/.ssh/known_hosts
+git push -f git@e.coding.net:fuckdoctors/notes.git master:master
+
 cd -
 rm -rf docs/.vuepress/dist
