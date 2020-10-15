@@ -17,7 +17,13 @@
     <div class="blog-container">
       <div class="blog-body">
         <div class="left">
-          <slot name="blog-left" />
+          <!-- <slot name="blog-left" /> -->
+          <template v-if="this.$slots['blog-left']">
+            <slot name="blog-left" />
+          </template>
+          <template v-else>
+            <Content slot-key="blog-left" />
+          </template>
         </div>
         <div class="main">
           <slot>
@@ -45,7 +51,13 @@
           </slot>
         </div>
         <div class="right">
-          <slot name="blog-left" />
+          <!-- <slot name="blog-right" /> -->
+          <template v-if="this.$slots['blog-right']">
+            <slot name="blog-right" />
+          </template>
+          <template v-else>
+            <Content slot-key="blog-right" />
+          </template>
         </div>
       </div>
 
@@ -142,6 +154,13 @@ node_modules/@vuepress/theme-default/styles/code.styl
 
   .blog-body {
     flex: 1;
+    display: flex;
+
+    .main {
+      flex: 1;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 

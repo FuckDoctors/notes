@@ -49,7 +49,7 @@
           ></a-icon>
         </a-tooltip>
         <a-tooltip :title="codeExpand ? 'hide' : 'show'">
-          <span class="code-expand-icon">
+          <span class="code-expand-icon no-zoom">
             <img
               alt="expand code"
               src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg"

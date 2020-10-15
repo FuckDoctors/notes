@@ -30,3 +30,29 @@ Hello World!
     </template>
   </CodeBox>
 </ant-d>
+
+<!-- prettier-ignore-start -->
+::: slot blog-right
+<blog-account
+  nickname="Zhao Bin"
+  avatar="/account/avatar/avatar2.jpg"
+  bio="个人简介"
+  title="程序员"
+  group="搬砖公司"
+  address="山东 济南"
+  :tags="['Java', 'Spring', 'Vue']"
+  :teams="[
+    {
+      name: '团队 1',
+      avatar: '/account/avatar/avatar2.jpg',
+      link: 'https://zhaobc.site',
+    }, {
+      name: '团队 2',
+      link: 'https://zhaobc.site',
+    }, {
+      name: '团队 3',
+    }
+  ]"
+></blog-account>
+:::
+<!-- prettier-ignore-end -->
