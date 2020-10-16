@@ -4,6 +4,8 @@ heroImage: /hero.png
 footer: Copyright © 2019.9-present zhaobc
 ---
 
+<text-to-particles text="欢迎光临" :font-size="150" style="height: 200px"></text-to-particles>
+
 <div class="features">
   <div class="feature">
     <h2><a href="notes/">学习笔记</a></h2>
